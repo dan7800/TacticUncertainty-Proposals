@@ -1,0 +1,492 @@
+\documentclass[12pt]{article}
+
+\usepackage{cite}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{color}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{enumitem} % Use for enumerating A, B, C etc...
+\urlstyle{same} % Used for formatting formatting url footnotes
+\usepackage{fancyhdr} % Header
+%\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage[table,xcdraw]{xcolor} % helps to format TOC
+\usepackage{soul} % highlighting
+%\usepackage{pgfgantt} % Project timeline
+\usepackage[titletoc,toc,title]{appendix} % Need for appendix, page numbering
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta,fit,positioning}
+%\usepackage{amssymb,graphicx} % Events and milestones
+\usepackage{amsmath}
+\usepackage{mathtools}
+%\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{lastpage}
+
+%\usepackage{algorithm}
+%\usepackage[noend]{algpseudocode}
+
+
+\usepackage{xspace} % Needed for et al.
+\newcommand{\ie}{\emph{i.e.,}\xspace}
+\newcommand{\eg}{\emph{e.g.,}\xspace}
+\newcommand{\etc}{etc.\xspace}
+\newcommand{\etal}{\emph{et~al.}\xspace}  
+
+% Page margins etc....
+\usepackage[bottom=1in, left=1in, right=1in, top=1in]{geometry} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+%\usepackage{wrapfig}
+%\usepackage{lipsum}
+%\usepackage{pgfgantt}
+
+%\usepackage{minted} % Side by side code
+
+\newcommand{\todo}[1]{\textcolor{cyan}{\textbf{[#1]}}}
+\newcommand{\dan}[1]{\textcolor{blue}{{\it [Dan: #1]}}}
+\newcommand{\qi}[1]{\textcolor{red}{{\it [Qi: #1]}}}
+\newcommand{\alex}[1]{\textcolor{green}{{\it [Alex: #1]}}}
+\newcommand{\travis}[1]{\textcolor{brown}{{\it [Travis: #1]}}}
+
+%%% Start column formatting
+% Note: In overleaf sometimes columns fail to render. Check on PDF Output
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}} % raggedright= align left
+\definecolor{Gray}{gray}{0.80} % the lower the #, the darker it gets
+%%% End Table formatting
+
+%%%% Start toggling showing/hiding some information
+\newif\ifShowAll
+\ShowAlltrue % Display All Info
+%\ShowAllfalse % Hide Some Info
+
+
+% Using Recurrent Neural Networks to Account for Tactic Volatility and Improve the Decision-Making Process of Autonomous Systems 
+
+\newcommand{\Title}{Accounting for Tactic Volatility: Improving Autonomous Systems
+Decision-Making Using Recurrent Neural Networks}
+
+\newcommand{\shortTitle}{Accounting for Tactic Volatility in Autonomous Systems} % Used in the heading just so it fits
+
+\newcommand{\CallNumber}{N00421-18-S-0001} % BAA Number
+\newcommand{\CallName}{XXXX}
+%\newcommand{\BAANumber}{N00421-18-S-0001}
+
+\usepackage{fancyhdr} % Header
+\pagestyle{fancy}
+\lhead{\emph{\shortTitle}}
+%\rhead{Krutz (RIT)}
+\rhead{Krutz: dxkvse@rit.edu}
+%\lhead{\shortTitle}
+%\rhead{}
+
+
+%\setlength\cftparskip{-.7pt} %% Table of contents spacing
+%\setlength\cftbeforechapskip{0pt}
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.3mm}} % Defines a new command for the horizontal lines, change thickness here
+
+%%%%%%% Start new Title format
+
+
+%% DK: I am not sure if we should have this
+%\noindent\large \CallName, \CallNumber\\[.20cm] % Call Name
+
+%  \textsc{\Large White Paper Submission\dan{update page with required information}}\\[0.5cm] % Major heading
+
+%\noindent\large \CallNumber\\[.20cm] % Call Name
+
+
+\begin{center}
+  \textsc{\Large White Paper Submission}\\[0.5cm] % Major heading such as course name
+  \textsc{\large \CallNumber}\\[1.5cm]   %% Fix this
+\end{center}
+
+%\noindent \LARGE \textbf{\Title}\\[.10cm] % Title
+\noindent \LARGE \textbf{\Title}\\[.10cm] 
+
+
+\noindent \large  \underline{\textbf{Technical Proposal}}\\ [.15cm] 
+
+\begin{tabular}{ L{50mm} L{100mm} }
+
+%\normalsize \textbf{Technical Proposal:} & \normalsize  \CallName, \CallNumber  \\
+
+%\noindent\large Technical Proposal: N00174-18-0001\\[.20cm]
+%\noindent\large NEC Technical POC: \\[.20cm]
+%\noindent\large Topic Number: \\[.20cm]
+
+%\normalsize \textbf{BAA Number:} & \normalsize \CallNumber  \\
+%\normalsize \textbf{Proposed Title:} & \normalsize  \Title  \\ 
+\normalsize \textbf{Research opportunity area:} & \normalsize  Research and Intelligence  \\ 
+% Research opportunity area of interest
+
+\normalsize \textbf{Technical POC/PI:} & \normalsize  Dr. Daniel Krutz \\
+ & \vspace{-2mm} \normalsize Department of Software Engineering
+ \\
+
+   & \vspace{-4mm} \normalsize 152 Lomb Memorial Drive \\
+   & \vspace{-6mm} \normalsize Rochester, NY 14623 \\
+   & \vspace{-8mm} \normalsize Phone: (585) 475-2896 \\
+   & \vspace{-10mm} \normalsize Email: dxkvse@rit.edu \\
+
+\vspace{-6mm}\normalsize \textbf{Administrative POC:} & \vspace{-6mm} \normalsize Ms. Laura Kleiman \\
+
+%   & \vspace{-8mm} \normalsize Senior Research Administrator  \\
+   & \vspace{-9mm} \normalsize Sponsored Research Services  \\
+   & \vspace{-11mm} \normalsize Rochester Institute of Technology  \\
+   & \vspace{-13mm} \normalsize University Services Center, Suite 2400  \\
+   & \vspace{-15mm} \normalsize 141 Lomb Memorial Drive, Rochester, NY 14623-5608   \\
+   & \vspace{-17mm} \normalsize Rochester, NY 14623-5608  \\
+   & \vspace{-19mm} \normalsize Phone: (585)-475-2262  \\
+%   & \vspace{-22mm} \normalsize Facsimile: (585)-475-2262  \\
+   & \vspace{-21mm} \normalsize Email: ljksrs@rit.edu  \\
+
+
+%BAA Number, proposed title, research opportunity area of interest, contracts and technical points of contact, telephone number, facsimile number, and E-mail address
+
+
+\end{tabular}
+
+ \end{titlepage}
+
+\cfoot{\thepage}
+\pagenumbering{alph} % Start roman numbering
+\setcounter{tocdepth}{1} % Show sections
+
+\cfoot{} % Leave blank
+
+
+%%%%% TOC - Start
+%\renewcommand\contentsname{Table of Contents}
+%\tableofcontents
+%\listoffigures
+%\listoftables
+%\newpage
+
+%%%%% TOC - End
+
+
+\setcounter{page}{1}
+\pagenumbering{arabic} % Switch to normal numbers
+
+%\cfoot{\thepage\ of \pageref{LastPage}}
+\fancyfoot[C]{Page~\thepage~of~\pageref{lastpage}}
+
+\section{Technical Concept}
+
+The proposed work will enable autonomous systems to \textbf{better account for uncertainty} and \textbf{volatility and operate in real world, volatile environments with small amounts of prior data}.
+
+%By enabling the system to more accurately account for tactic volatility, this innovative work will {\bf increase the system's resiliency, efficiency, and ability to complete mission critical operations.} This will be accomplished through the use of \emph{Multiple Regression Analysis} (MRA) to estimate tactic volatility and \emph{Autoregressive Integrated Moving Average} (ARIMA) to perform time series forecasting allowing the system to proactively maintain specifications. 
+
+%allowing them to be more \ul{resilient, efficient, effective at anticipating bad and erratic decisions, and support the completion of mission and system critical operations}. 
+
+
+% Change everything below
+
+
+% DK: Tie this back into the problem of systems working with uncertain data in uncertain/random environments. Start off with this
+
+Autonomous systems frequently operate in volatile environments that contain large amounts of uncertainty and variability. Therefore, it is imperative that autonomous systems properly account for this uncertainty and variability to remain effective, resilient and retain the ability to accomplish mission objectives. \emph{Tactics} are actions performed by autonomous systems to respond to changes in their environment or to achieve system objectives. Example tactics include reducing non-essential functionality on a UAV when battery levels are low, or the provisioning of an additional virtual machine in a web farm when the workload reaches a specific threshold. The AI components in autonomous systems rely upon accurate information to select the tactic(s) that will lead to decisions that lead to the optimal system outcome. Inaccurate information used in the decision-making process will frequently lead to decisions producing less than optimal benefit, or even undesired outcomes. Some forms of tactic volatility include latency, cost, dependability and availability of the tactic. 
+
+Unfortunately, state-of-the-art decision-making processes in autonomous systems do not account for uncertainty and variability in the attributes of the tactic~\cite{moreno2017adaptation, Moreno:2017:CMP:3105503.3105511, camara2016analyzing}. For example, the cost and latency necessary to perform a tactic operation can be impacted by innumerable internal and external events.  Therefore, a robust prediction mechanism is needed to enable autonomous systems to better anticipate and account for tactic volatility to reduce this uncertainty. \ul{This pioneering research will develop a \emph{Tactic Volatility Aware} (TVA) solution that will enable autonomous systems to better account for volatility, especially when operating in new and stochastic environments with limited amounts of historical data.} %This effort is the first that enables systems to account for tactic volatility that will almost invariably be encountered in real-world systems. 
+The proposed TVA framework will address the following crucial challenges and limitations currently faced by autonomous systems: 
+
+\begin{enumerate}[noitemsep]
+
+	\item The proposed process must enable the autonomous system to more effectively account for uncertainty and variability in its operating environment. 
+
+	\item Many autonomous systems operate in new, stochastic environments. Therefore, the proposed framework will enable the system to make accurate predictions with minimal amounts of historical data. The framework will predict not only values but also provide a measure of certainty. In some circumstances knowing the amount of volatility will be more important than having a particular predicted value.
+
+	\item When prior mission data is available, the system should incorporate this information into its decision-making process.
+
+	\item Systems need to act proactively to ensure that specifications defined in the \emph{Service Level Agreement} (SLA) are adhered to.
+
+	\item To support its inclusion a wide-range of existing systems, the proposed framework should easily integrate into existing autonomous decision-making processes and strategies such as including MAPE-K~\cite{kephart2003vision} and Rainbow~\cite{garlan2004rainbow}.
+
+\end{enumerate}
+
+
+%\ul{This pioneering research will develop a Bayesian Ridge Regression (BRR) framework to support autonomous operations.} This effort is the first that enables systems to account for tactic volatility that will almost invariably be encountered in real-world systems. 
+
+
+
+
+
+
+%This will be accomplished in {\em XXXX innovative and integrated ways to maximize the overall effectiveness of complex decision-making}: 
+
+%(1) to analyze\todo{.......} 
+
+%\begin{enumerate}[noitemsep]
+%  \item XXX
+%  \item XXXX
+%\end{enumerate}
+
+
+
+
+
+
+
+% likely going to make bad/erratic decisions. <- Likely add this in there
+
+
+
+\subsection{Motivating Example}
+\label{sec: motivatingexample}
+
+A cloud-based self-adaptive system~\cite{moreno2017adaptation} has a goal of maximizing utility while minimizing cost. The SLA defines the target response time ($T$) and how utility ($U$) is calculated. %The system incurs penalties if the target response time is not met and accrues rewards for meeting the target average response time against the measurement interval. %In this scenario, the cost is directly proportional to the number of servers used. 
+The average response rate is $a$, the average response time is $r$, the maximum request is $k$ and the length of each interval is defined as $\tau$. Provided content is reduced as necessary using a dimmer value ($d$). Optional content has reward of ($R_O$), and produces a higher reward than mandatory content ($R_M$). Cost ($C$) could be the monetary or energy cost:
+
+\begin{equation} \label{eq: motivatingExample}
+	U = \left\{ \begin{array}{rl}
+ 	(\tau a (dR_O+(1-d)R_M)/C~~~~r\leq T \\ 
+  	(\tau \min (0,a-k)R_O)/C~~~~r> T 
+       \end{array} \right.
+\end{equation}
+
+
+This system can account for increases in user traffic using two tactic options: (I) reducing the proportion of responses that include the optional content (dimmer) (II) adding a new server. While reducing optional content has negligible latency, adding a new server can take several minutes. % DK: ? Need a transitioning sentence? 
+
+\vspace{1mm} \noindent \textbf{Tactic Latency Volatility: }If the system anticipates that the response threshold will be surpassed in the immediate future, then the system could proactively start the tactic to add a server and keep the response time under the defined threshold. Alternately, the system may determine that latency readings have become highly volatile while not yet surpassing a threshold, in this case the system may utilize strategies on which latency has less effect. Overestimating latency could result in scenarios where the system unnecessarily incurs additional cost, as servers would be `active' longer than necessary. Additionally, if the system determines that it is likely to surpass the defined response time threshold before a new server can be added, then the most appropriate action may be to use the faster tactic that reduces the amount of optional content while a new server is being added. Improper tactic latency predictions can lead to situations where the system executes the tactic too soon or too late, or even selects the improper tactic for the encountered scenario. \emph{Accounting for tactic latency volatility is a paramount concern, especially when utilizing a proactive adaptation approach, or when utilizing complementary tactics.} % DK: I don't love the takeaway messages in each of these examples
+
+\vspace{1mm} \noindent \textbf{Tactic Cost Volatility: }In this scenario, it is important to account for cost volatility to ensure accurate utility calculations. In the event that the cost is defined to be higher than what the system is actually encountering in the real-world, then this may lead to scenarios where optional ($O$) content is shown too infrequently. Conversely, if the cost is defined lower than what is actually being encountered, then could lead to scenarios where optional ($O$) content is shown too frequently. \emph{A volatility aware solution that enables the system to more accurately predict cost would enable the system to make decisions that lead to more optimal outcomes.}
+
+
+\vspace{1mm} \noindent \textbf{Reactive Specifications Monitoring: }If the motivating example was a purely responsive system and did not employ any proactive functionality, it will only determine if the defined response threshold ($T$) is being surpassed at the current moment. This can be problematic since the tactic of adding additional resources to reduce response time in our example has latency, so the system will need to begin adapting \emph{before} the tactic is actually needed to be complete. Otherwise, the system will incur penalties or not realize rewards while it waits for the tactic to become available. \emph{A process that enables the system to better anticipate how it will perform in accordance with the SLA would help the system to operate more optimally in dynamic environments.}
+
+
+\subsection{Technical Objectives}
+
+Our TVA approach  is the first effort to provide support for predicting tactic volatility in self-adaptive/autonomous systems. Our work will have the following key objectives:
+
+%The proposed tactic volatility prediction framework based upon dynamic Bayesian Matrix Factorization is the first effort to provide support for predicting tactic volatility in self-adaptive/autonomous systems. %\dan{Qi: Can you finish this part}
+
+\vspace{2mm} \noindent \textbf{Objective I: Predicting Tactical Data and Volatility with Recurrent Neural Networks: }Autonomous systems typically collect data via various sensors which arrives as time series with varying frequencies. Typically this data consists of continuous parameters (\eg altitude, energy consumption, speed, engine RPMs, outsite air temperature, \etc), but may also consist of discrete parameters (\eg weather conditions, user/system commands, \etc). Recurrent Neural Networks (RNNs), especially with modern memory cell architectures -- such as LSTM (long short-term memory), GRU (gated recurrent unit), Delta-RNN and others -- are excellent at determining long time range dependencies and predicting future time series values. However, to more appropriately handle tactic volatility, we will extend these to not only predict future sensor parameters \emph{but also a confidence interval for those predictions} so the system can be better informed of the risk for using such a prediction.
+
+
+
+\vspace{2mm} \noindent \textbf{Objective II: Speeding Transfer Learning Using Evolved RNNs: } The project team has shown significant success in efficiently evolving recurrent neural networks with multiple memory cell types for time series data prediction~\cite{desell-exalt-coal-2019,desell-gecco-examm-2019}. In order to more rapidly adjust to new sensors and minimal amounts of data, we will utilize an evolutionary strategy to take RNNs pre-trained on similar data, and evolve them in parallel using new sensor data.  This should quickly bootstrap the learning process to allow accurate data and confidence predictions using new and limited data.
+
+
+
+\vspace{2mm} \noindent \textbf{Objective III: Adaptive Control Loop Integration: }We will demonstrate TVA's ability to positively impact the decision-making process in autonomous systems by integrating it in to the popular MAPE-K~\cite{kephart2003vision} and Rainbow~\cite{garlan2004rainbow} self-adaptive control loops. %DK: Add more to this?
+
+\vspace{2mm} \noindent \textbf{Objective IV: Creation of Dataset Containing Tactic Volatility: }While there are several available datasets that have been widely used~\cite{SEAMS_Artifacts_URL, traffic_Archive_URL}, no existing significantly-sized datasets contain time series data with real-world tactic volatility. %, specifically in the form of cost and latency. %This lack of existing, easy to adopt, tactic volatility data not only makes the evaluation of potential decision-making mechanisms much more difficult, but can also lead to inaccurate findings due to the `one-off' nature of self-created simulation tools and datasets. 
+To address this limitation, we will create a dataset of time series data containing real world tactic volatility. This will be accomplished by collecting time series data from physical robotic devices such as UAVs and robotic fish. %APIs will be used to collect the time series data (including cost, latency, \etc) from these devices. 
+The team has already created an initial, publicly available dataset that contains real-world tactic volatility data~\cite{VALET_TOOL_URL}.
+
+%There are no known significantly sized, existing datasets that contain real-world volatility. This limits the ability to evaluate processes and their ability to account for real-world variability. We will create a large, publicly available 
+
+
+%MAPE-K~\cite{kephart2003vision} is a popular adaptation loop used in a large number of autonomous systems. We will integrate our TVA process into MAPE-K to demonstrate its effectiveness, and ability to enhance the decision-making process in a large number of autonomous systems.
+
+\vspace{2mm} \noindent \textbf{Objective V: Component and System Evaluation: }A systematic evaluation will be conducted at both the component and system levels to evaluate the overall effectiveness of the our framework in support of predicting tactic volatility in autonomous systems. We will utilize existing evaluation tools such as SWIM~\cite{moreno2018swim} and DARTSIM~\cite{MorenoDART2019} to demonstrate the positive impact of TVA. We will establish the positive impact that our TVA process will have on a system's efficiency, resiliency and ability to complete system/mission critical operations using our created dataset.
+
+
+\subsection{Proposed Tactic Volatility Aware (TVA) Technique}
+
+%Our TVA process consists of two phases: (I) Forecasting SLA specifications using \emph{Autoregressive Integrated Moving Average} (ARIMA) (II) Estimating tactic latency and cost using Multiple Regression Analysis (MRA).\dan{update these steps}
+
+
+Our TVA process will consist of several primary phases which are described below:
+
+\begin{enumerate}[noitemsep]
+
+\item \textbf{Predict Tactic Volatility: }We will use the Evolutionary Exploration of Augmenting Memory Models (EXAMM) algorithm to evolve RNNs to predict time series data from system sensors.  We will further extend EXAMM to utilize not only mean squared error (MSE) and mean absolute error (MAE) of predictions as loss functions, but also incorporate a measure of confidence -- predicting an estimation of running standard deviation for the time series.
+
+\item \textbf{Bootstraping Trained RNNs to New Scenarios and Data: }We will investigate the use of using previously trained RNNs and evolving them to quickly predict new parameters with limited available data, for example, if a new sensor system becomes available; or re-evolve a network if sensors are damaged and become unavailable.\dan{we should add in a few words how this fits into TVA better.}
+
+\item \textbf{Incorporate predictions into decision-making process: }The estimated tactic values will be included in the system's decision-making process, enabling it to make more informed decisions leading to more optimal outcomes.
+
+
+
+%The anticipated tactic volatility values will be incorporated into the decision-making processes in several ways. The estimated tactic values will be included in the system's \emph{utility} equation which is often used to guide the system's actions and the decisions-made by the system. The estimated values will also be \hl{compared} with the specifications defined in the SLA to enable the system to act more proactively when necessary to ensure that the specifications defined in the SLA are adhered to.\dan{rewrite this}
+
+%% DK: I am not sure that this step is actually needed since it is kind of explained in the previous step
+%\item \textbf{Perform system operations using predictions: }The input values will enable the system to make more appropriate and informed actions, thus supporting it in dynamic and volatile environments. \dan{rewrite this}
+	
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%DK: Take this out if space is an issue since it may be confusing to people
+%A high level overview of TVA is shown in Figure \ref{fig:TVA_workflow}.
+
+
+% DK: Maybe remove the tactic observations part
+
+%\tikzstyle{process} = [rectangle,rounded corners, text centered, draw=black, minimum width=.5cm, minimum height=1.25cm,text width=63.3]
+
+%\tikzstyle{arrow} = [thick,->,>=stealth]
+
+%\begin{figure}[h]
+%\centering
+%\begin{tikzpicture}[node distance=0.2cm]
+
+%\node (a) [process, xshift=-.0cm] {Tactic Observations};
+%\node (b) [process, below of=a, node distance=2.0cm] {xxPrediction XXX};
+
+
+%\node (c) [process, right of=a, node distance=4.5cm] {SLA};
+%\node (d) [process, below of=c, node distance=2cm] {Decision Process};
+
+%%\node (e) [process, below right of=c, xshift=2.3cm, node distance=1.5cm] {System Actions};
+
+%\node (e) [process, right of=d, xshift=2.3cm, node distance=1.5cm] {System Actions};
+
+%\node[draw, thick, dotted, rounded corners, inner xsep=1em, inner ysep=1em, fit=(a) (b)] (box) {};
+
+%\node[fill=white] at (box.north) {Text Here};
+
+
+%\node[draw, thick, dotted, rounded corners, inner xsep=1em, inner ysep=1em, fit=(c) (d)] (box) {};
+
+%\node[fill=white] at (box.north) {Text Here};
+
+
+% \draw[black,thick,dotted] ($(J.north west)+(-1.6,1.0)$)  rectangle ($(L.south east)+(1.6,-3.0)$);
+ 
+%  \draw[red,thick,dotted] ($(J.north west)+(2.0,1.0)$)  rectangle ($(L.south east)+(5.0,-3.0)$);
+
+%\node (a) [process, xshift=-.4cm] {Tactic Observations};
+%\node (b) [process, right of=a, xshift=2.9cm] {BRR Prediction};
+%\node (c) [process, right of=b, xshift=2.9cm] {Utility Calculation};
+%\node (d) [process, right of=c, xshift=2.9cm] {Tactic Planning};
+%\node (a) [process, xshift=-.4cm] {CCCC};
+%\node (a) [process, xshift=-.4cm] {DDDDD};
+
+
+
+%\node (sa) [process, xshift=2.5cm] {BRR Latency Prediction};
+%\node (analysis) [process, right of=sa, xshift=2.7cm]  {Utility Equation/Select Tactic};
+%\node (analysis) [process, right of=sa, xshift=2.7cm]  {Execute Tactic};
+
+
+% \draw [arrow] (a) -- (b);
+% \draw [arrow] (b) -- (d);
+% \draw [arrow] (c) -- (d);
+% \draw [arrow, ultra thick] (d) -- (e);
+ 
+
+%\end{tikzpicture}
+%\caption{Basic Workflow of TVA\dan{This needs to be modified/expanded}} 
+%\label{fig:TVA_workflow}
+%\end{figure}
+
+
+
+\section{Future Naval Relevance}
+% Future Naval Relevance – A description of potential Naval relevance and contributions of the effort to the agency’s specific mission.
+
+
+The proposed work closely adheres to the goals of the \emph{Naval Research and Development Framework} in the categories of `Augmented Warfighter' and `Integrated \& Distributed Forces'. This research will directly benefit innumerable self-adaptive processes ranging from small cyber-physical systems to large UAVs, making them more effective and resilient. To support autonomous systems in real-world settings, a tactic volatility aware solution is needed to increase the system's efficiency, predictability, resiliency, and ability to complete mission and system critical operations. 
+
+
+\section{Navy Lead}
+% Navy Lead: Provide the name, organizational code, and phone number of the NAWCAD lead, if known. Leave this entry blank if there is no Navy Lead.
+
+
+
+
+% DK: Maybe just leave these as uknown
+%name, organizational code, and phone number
+
+%%%%%%%%%%%%%%%
+    \begin{multicols}{2}
+    \begin{itemize}[noitemsep]
+        \item \textbf{Name: }Dave Gerkin 
+        \item \textbf{Organizational code: }\hl{XXXX}   %  Engineering Education and Research Partnerships at Naval Air Warfare Center
+        \item \textbf{Email: }David.Gerkin@Navy.mil
+        \item \textbf{Phone Number: }(301)-342-8323
+
+    \end{itemize}
+    \end{multicols}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Cost Estimate} % Required Section
+% Double check this cost number
+
+% DK ? - Mention something about the ONR project?
+
+The total budget is \$175k/yr for a total cost of \$525k for the three year project. Our budget will include summer support for the project team  II) PhD Student support III) Equipment (IV) Travel for dissemination. The project team has experience successfully executing DOD projects. %and have collectively authored more than \hl{XXX} works, many of which have appeared in top-tier venues. 
+Additionally, PI Krutz was a 2018 Research Fellow for the AFRL working in the area of artificial intelligence. A broad overview of our funding plan is shown in Table~\ref{table:budget}.
+
+%\vspace{-1mm}
+\begin{table}[h]
+\begin{center}
+\caption{Budget Summary}
+\label{table:budget}
+
+\begin{tabular}{ c | c | c  }
+			
+  \textbf{Y1} & \textbf{Y2} & \textbf{Y3} \\   \hline
+  175k & 175k & 175k \\
+   \end{tabular}
+  \end{center}
+%\vspace{-4mm}
+\end{table}
+
+
+%   ? What is the typical budget
+% 1 PhD student supervised by Krutz/Qi, the other by Travis/Alex (2 total)
+
+\vspace{-5mm}
+% Not sure we should have this section
+\subsection*{Project Team\todo{fix}}
+
+
+\setlength\columnsep{65pt}
+ \begin{multicols}{2}
+     \begin{itemize}[noitemsep, leftmargin=*]
+        \item Dr. Daniel Krutz - \emph{Autonomous Systems}
+        \item Dr. Qi Yu- \emph{XXXXX}
+        \item Dr. Travis Desell - \emph{Time Series Prediction, RNN}
+        \item Dr. Alex Ororbia - \emph{XXXXX}
+%        \item item 5
+%        \item item 6
+    \end{itemize}
+\end{multicols}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\label{lastpage}
+\cleardoublepage
+
+
+\appendix
+
+
+%% DK: Put onto a different page since it does not count against the page limit
+\setcounter{page}{1}
+
+\cfoot{\thepage}
+\pagenumbering{roman}
+%\section{Appendix}
+
+%\input{sections/Appendix.tex}
+
+
+%% I think the appendix goes before the bib. Otherwise, I could see people missing it
+\newpage
+\pagebreak
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

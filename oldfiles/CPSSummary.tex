@@ -1,0 +1,216 @@
+\documentclass[11pt]{proposalnsf}
+% \documentclass{article}
+\usepackage{times} % Just makes proposal look cleaner for editing
+\usepackage{url}
+\usepackage{color} 
+%\usepackage{tabularx} % table text width
+\usepackage{soul} % highlighting
+\usepackage{titlesec} % Formats title
+\usepackage{enumitem}
+
+% Reducing Decision-Making Uncertainty in Cyber-physical Systems
+% Addressing Decision-Making Uncertainty in Intelligent Systems By Accounting for Tactic Volatility
+
+% Small: Addressing Decision-Making Uncertainty in Cyber-physical  Systems By Accounting for Tactic Volatility 
+
+\newcommand{\Title}{Addressing Decision-Making Uncertainty in Cyber-physical Systems By Accounting for Tactic Volatility}
+
+\newcommand{\todo}[1]{\textcolor{cyan}{\textbf{[#1]}}}
+\newcommand{\dan}[1]{\textcolor{blue}{{\it [Dan says: #1]}}}
+\newcommand{\amit}[1]{\textcolor{green}{{\it [Amit says: #1]}}}
+\newcommand{\qi}[1]{\textcolor{red}{{\it [Qi says: #1]}}}
+\newcommand{\jayme}[1]{\textcolor{green}{{\it [Jayme says: #1]}}}
+
+\begin{document}
+
+{\small \bf \Title} % Title doesn't matter as it is copied and pasted
+\newline
+\centerline{\titlerule}
+
+
+%% Put a technical portion on controls
+
+
+%Think about the last big decision that you made in your life. You likely relied on information to make the decision. Having accurate information was key to ensuring that you made the appropriate decision. Decision-making processes in cyber-physical systems perform similarly. 
+
+
+%\dan{Need to describe what tactics are}
+%\dan{Mention the educational component}
+% Make sure that the RQs are clear
+
+Tactics are the actions taken by autonomous cyber-physical systems to adapt to changing situations. Example tactics include provisioning an additional virtual machine in a web farm when the workload is about to reach a specific threshold, or reducing functionality on a device when battery levels are low. The AI components in cyber-physical systems rely upon accurate information to select the tactics that will lead to the decision that produces the maximum benefit. Therefore, inaccurate information used in the decision-making process will frequently lead to decisions producing less than optimal benefit. Each of these tactic decisions contain specific attributes about them. Some of which include decision-making time, reliability of the action, and availability of the action. Depending on the environment and situation, these values could vary greatly. For example, due to unforeseen hardware problems the system could require 3 seconds to perform a specific decision instead of the expected 1 second. Similar variability could also occur in the other attributes of the tactic. It is crucial for cyber-physical systems to account for this variability as it could have a significant impact on the decision-making process. Unfortunately, current state of the art adaptation processes only consider tactics to have static attributes, and are unable to account for any variability in tactics. To address this limitation in self-adaptive cyber-physical systems, our Tactic Volatility Aware (TVA) process employs a novel Bayesian multi-task learning model to simultaneously predict multiple volatility parameters, including latency, dependability, and availability. These predicted parameters will be integrated into the self-adaptation control loop, which will enable autonomous cyber-physical systems to make decisions leading to higher utility (benefit).
+
+%our Tactic Volatility Aware (TVA) process includes previously observed decision-making values into the self-adaptation control loop. This enables the CPS to make decisions that lead to higher utility (benefit). % DK: Should we provide more details about our process?
+
+In this work, we will I) Understand the impact of cyber-physical systems not accounting for decision-making volatility; II) Develop and evaluate a new method of accounting for this volatility to reduce uncertainty, thus enabling improved decisions; III) Demonstrate our solution on physical devices such as small robotic UAVs and in IoT devices IV) Create a publicly available simulation environment that will be used to evaluate our decision-making process; and V) Conduct educational workshops on cyber-physical systems for Deaf/Hard of Hearing students. 
+
+
+% DK: Make sure that these tasks match up with what is in the paper
+
+
+
+%%% Have IM and BI have the same number of lines.
+
+\vspace{3mm}
+\noindent \textbf{Intellectual Merit} %Does it make sense
+% How the work is important to its field
+
+This project fills a void in state of the art decision-making processes that are unable to account for decision-making volatility. Accounting for this volatility is important since real-world cyber-physical systems will encounter innumerable unforeseen challenges that they will need to effectively respond to. The proposed process will easily integrate into proven, popular adaptation techniques, meaning that it will be easy to include in a large number of systems. Our preliminary results from accounting for latency volatility in the decision-making process have been found to reduce the system's decision-making uncertainty, increase system resiliency, and enable more effective decision-making. Our proposed TVA process will be developed and evaluated in several environments, including actual cyber-physical systems such as drones and IoT devices. %This will enable us to demonstrate the benefits of our proposed process in physical devices.
+
+
+
+
+
+\vspace{3mm}
+\noindent \textbf{Broader Impacts}
+
+%The outcome of this project can have a far-reaching impact on the decision-making process in many types of intelligent systems, not just cyber-physical systems. First, a
+
+As cyber-physical systems become more ubiquitous, the need for robust autonomous decision-making components for these systems will continue to grow. This includes the need for systems that make more efficient and effective decisions that increase the resiliency of the system. Our proposed decision-making volatility aware process will easily integrate into existing popular adaptation processes such as MAPE-K, making it easily adoptable in a wide range of cyber-physical and other intelligent systems. This project will provide other researchers will a more effective self-adaptive decision making process that they can include in their own work. We will also create a publicly available simulation tool that will enable others to evaluate their work in a robust environment that simulates decisions and uncertainty in various settings. Our educational student workshops will have a direct, positive impact on a total of 48 Deaf/Hard of Hearing students.
+
+
+%Thirdly, the simulation environment used to evaluate and demonstrate the impact of our proposed solution can be used by others in their own work.
+
+
+% Can have about 3 lines on page 2
+\end{document}
+
+% https://www.nsf.gov/pubs/2018/nsf18538/nsf18538.pdf
+
+
+
+
+
+
+
+
+
+%%%%%% Backup try 4/16
+
+Think about the last big decision that you made in your life. You likely relied on information to make the decision. Having accurate information was key to ensuring that you made the appropriate decision. Decision-making processes in cyber-physical systems perform similarly. The AI components in cyber-physical systems rely upon accurate information to select the decisions that will lead to the maximum benefit. Inaccurate information used in the decision-making process will frequently lead to decisions producing less than optimal benefit. 
+
+Cyber-physical systems often autonomously decide on the most appropriate action to take in specific situations. Each of these decisions contain specific attributes about them. Some of which include decision-making time, reliability of the decision, and produced benefit of the decision. Depending on the environment and situation, these could be variable values. For example, due to unforeseen hardware problems the system could require 3 seconds to perform a specific action instead of the planned 1 second. Similar variability could also occur in the produced benefit, or availability of each decision. It is important for cyber-physical systems to account for this variability as it could have a potentially substantial impact on its decision-making process. To address this limitation with state-of-the-art decision-making mechanisms in cyber-physical systems, we propose a new method of including previously observed values into the decision-making process. This will enable the system to adapt to have more accurate information to make better decisions from.
+
+In this work, we will I) Understand the negative effects of cyber-physical systems not accounting for decision-making volatility; II) Develop and evaluate a new method of accounting for this volatility to reduce uncertainty, thus enabling improved decisions; III) Create a publicly available simulation environment that will be used to evaluate our decision-making process; and IV) Create several educational modules using our simulated environment to enable easy instructor adoption of AI concepts in their curriculum. These will be evaluated and disseminated in several outreach events for local High School students.
+
+
+%Something educational
+
+
+% RQ: Make sure to have RQs and something educational
+
+
+
+%We will accomplish our goal by.....
+
+
+%Decision-making characteristics in cyber-physical systems include the benefit of the action, required time to perform the action, dependability of the decision and availability of the decision. During the decision-making process, it is imperative that the system has accurate assumptions about these values. Inaccurate assumptions could likely lead to poor decisions. Despite the fact that these values could be highly volatile, current state of the art decision-making mechanisms in cyber-physical systems. This limits the system's ability to have accurate information in which to base decisions off of. To address this limitation with state-of-the-art decision-making mechanisms in cyber-physical systems, we propose a new method of including previously observed values into the decision-making process. This will enable the system to adapt to have more accurate information to make better decisions off of.
+
+
+
+
+
+%Cyber-physical systems often autonomously decide on the most appropriate action to take in specific situations. Each of these decisions contain specific attributes about them. Some of which include decision-making time, reliability of the decision, and produced benefit of the decision. Depending on the environment and situation, these could be variable values. For example, due to unforeseen hardware problems the system could require 3 seconds to perform a specific action instead of the planned 1 second. Similar variability could also occur in the produced benefit, or availability of each decision. It is important for cyber-physical systems to account for this variability as it could have a potentially substantial impact on it's decision-making process. To address this limitation of cyber-physical systems currently being unable to account for decision-making variability, we propose the creation of a new method that will account for this variability. This will be accomplished by including previously observed decision making values and outcomes into the decision-making process.
+
+
+
+%%%%%%% End of Try #1
+% What specific techniques will be developed
+
+
+%Cyber-physical systems often autonomously decide on the most appropriate action to take in specific situations. Each of these decisions contain specific attributes about them. Some of which include decision-making time, reliability of the decision, and produced benefit of the decision. Depending on the environment and situation, these could be variable values. For example, due to unforeseen hardware problems the system could require 3 seconds to perform a specific action instead of the planned 1 second. Similar variability could also occur in the produced benefit, or availability of each decision. It is important for cyber-physical systems to account for this variability as it could have a potentially substantial impact on it's decision-making process.
+
+%Unfortunately, leading state of the art decision-making processes in cyber-physical systems assume these be a static values, ones that must be defined at the inception of the cyber-physical system. For example, the system may contain a static time of a specific action taking 3 seconds, but in reality the action could take a variable amount of time. The system is unable to account for this volatility in the decision-making process. This can have a severely negative impact on the system's ability to properly plan for not only that action, but can impact simultaneous and subsequent actions as well.
+
+%\dan{make sure to actually explain what we are doing}
+%To address these challenge, we propose accounting for decision-making volatility during the decision-making process. In our proposed enhancement to the decision-making process, we will use observed values from previous decisions and include them in future decisions. This will enable the cyber-physical system to learn from previous actions. This will lead to the system making more effective decisions, while also increasing the resiliency of the system. A secondary benefit of our work will be the creation of a publicly accessible decision-making simulation tool for cyber-physical systems. This tool will enable us, and other researchers to simulate volatility in the decision-making process of cyber-physical systems. This will allow for the quick and easy testing of different decision-making techniques and simulate a variety of different settings and scenarios.
+
+%By enabling the decision-making mechanisms in CPS to take tactic volatility into account, this will enhance the system's adaptability, scalability, resiliency, safety and security. 
+
+
+
+
+
+% ? The basic RQs that our system will address
+
+
+
+% How will we address this problem. What will we deliver
+
+
+
+% Mention how the work will also create a new testbed
+%To enable the testing and verification of our approach, we will create a publicly available testbed.
+
+
+
+
+
+\vspace{3mm}
+\noindent \textbf{Intellectual Merit} %Does it make sense
+% How the work is important to its field
+
+This project fills a void in existing decision-making processes where decision-making volatility and uncertainty is not even considered. Accounting for this volatility is important since real-world cyber-physical systems will encounter innumerable unforeseen challenges that they will need to effectively respond to. The proposed process integrates into proven, popular adaptation processes providing confidence that it will work and that it is easily adoptable. Being easily adoptable in existing decision-making processes is essential for wide-spread adoption. Our initial results from accounting for latency volatility in the decision-making process have been found to reduce the system's decision-making uncertainty, increase system resiliency, and enable more effective decision-making.
+
+
+
+
+% Will be tested in simulations and in real-world devices
+
+
+%- Systematically designed to address real-world challenges in cyber-physical systems
+%- Integrates into proven, popular adaptation processes providing confidence that it will work and that it is easily adoptable > Essential for wide-spread adoption
+
+%- Our approach is straightforward yet novel. Its motivation is to lead to more effective and efficient decisions while reducing uncertainty, which is widely recognized to be detrimental to decision-making processes.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%This project fills a void in the decision-making process of cyber-physical systems, the effectiveness of which has been hindered by a lack of existing processes that can account for \hl{action} volatility. The proposed \hl{enhanced process} is systematically designed to address key, real-world challenges faced by the decision-making process of cyber-physical systems. Accounting for decision volatility will enable the system to better react to real-world events.
+
+%The proposed process will be evaluated in simulated and physical environments to demonstrate its effectiveness.
+
+
+% Existing systems do not account for volatility
+% Fits into existing processes, is generic
+% Uses a simple, benefit (utility) function
+% What initial results have shown
+
+
+
+%Initial results have demonstrated our proposed technique to allow systems to make more effective decisions, while increasing the system's resiliency.
+
+% Process can be used in a large variety of systems
+% Easy to integrate into existing decision-making processes that use the popular MAPE-K loop -> Initial results show that it can help the resiliency and 
+% 
+
+
+
+
+\vspace{3mm}
+\noindent \textbf{Broader Impacts}
+
+The outcome of this project can have a far-reaching impact on the decision-making process in many types of intelligent systems, not just cyber-physical systems. First, as the role of cyber-physical systems continues to increase, the need for robust decision-making components for these systems will also continue to grow. This includes the need for systems that make more efficient and effective decisions that increase the resiliency of the system. Secondly, our proposed decision-making volatility aware process will easily integrate with existing popular adaptation processes such as MAPE-K, making it easily adoptable in a wide range of cyber-physical and other intelligent systems. Thirdly, the simulation environment used to evaluate and demonstrate the impact of our proposed solution can be used by others in their own work. 
+The project will provide other researchers a more effective decision-making mechanism through our created simulation environment that will be made publicly available. This will enable others to evaluate their work in a robust environment that simulates decisions and uncertainty in various settings.
+
+
+%\dan{mention this in the other parts of the proposal}
+
+%Several educational modules will be based off this simulation that will enable teachers to include 
+
+
+
+%? Outreach components
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 

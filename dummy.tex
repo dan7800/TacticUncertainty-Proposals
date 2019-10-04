@@ -1,0 +1,245 @@
+%\documentclass[sigconf,review, anonymous]{acmart}
+%\documentclass[10pt,conference]{IEEEtran} 
+\documentclass[12pt]{article}
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{balance}
+\usepackage{soul} % highlighting
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{url}
+
+
+
+
+
+
+
+%%%%%
+\usepackage{framed}		% Allows drawing text boxes
+\usepackage{pgfgantt}
+\usepackage{rotating}
+\usepackage[graphicx]{realboxes}
+\usepackage{pgf-umlsd}
+\usepackage{tikz}
+
+%%%%%
+
+
+
+
+
+%%%%%
+
+\usepackage{xspace} % Needed for et al.
+\newcommand{\etal}{{et al.\@\xspace}}
+
+
+
+\title{xxxxx}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+
+\end{abstract}
+
+
+
+\maketitle
+
+
+\section{Introduction}
+
+
+
+\begin{figure}[h]
+
+\begin{center}
+
+
+
+%% Do this for right angles on connecting lines
+\tikzset{
+    -|/.style={to path={-| (\tikztotarget)}},
+    |-/.style={to path={|- (\tikztotarget)}},
+}
+
+%% Rec, circle, rrec, arrow
+
+\usetikzlibrary{fit, } %% Used for putting dotted box
+\usetikzlibrary{calc}
+
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{arrow}=[draw, -latex] 
+
+%\tikzstyle{database}= [fill=blue!20, cylinder, shape border rotate=90, draw,minimum height=2.2cm,minimum width=1.55cm]
+
+\tikzstyle{database}= [cylinder, shape border rotate=90, draw,minimum height=2.2cm,minimum width=1.55cm]
+
+% Define block styles
+\tikzstyle{line} = [draw, -latex']
+
+%\tikzstyle{block} = [rectangle, draw, fill=white!20, text width=5em, text centered, minimum height=4em]
+\tikzstyle{circle} = [ellipse, draw, fill=white!20, text centered]
+
+\tikzstyle{rrec} = [rectangle, draw, fill=white!20, text width=5em, text centered, rounded corners, minimum height=4em]
+
+% Database icon
+\tikzstyle{dbase} = [cylinder, draw, fill=white!20, shape border rotate=90, minimum height=3em]
+
+%\tikzstyle{smrrec} = [rectangle, draw, fill=white!20, text width=5em, text centered, rounded corners, max height=2em]
+
+%\tikzstyle{drrec} = [rectangle, draw, fill=white!20, text width=5em, text centered, rounded corners, minimum height=4em]
+
+
+
+
+\scalebox{.9}{
+\begin{tikzpicture}[node distance = 3cm, line width=.5mm]
+   
+\node [dbase] (Data) {Data}; % Var name, Displayed Name % Change to database icon
+
+\node [circle, above left of=Data, yshift=3ex, xshift=3ex, maximum height=1em, maximum width=.5em] (MAB) {MAB}; 
+
+\node [rrec, left of=MAB] (RNN) {RNN};
+%\node [rrec, above right of=Monitor] (Analyze) {Analyze};
+%\node [rrec, right of=Analyze] (Plan) {Plan};
+\node [rrec, right of=MAB] (Execute) {Execute Tactics};
+\node [rrec, right of=Execute] (Collect) {Collect Data};
+
+
+ \draw [line] (RNN) -- (MAB);
+ \draw [line] (MAB) -- (Execute);
+ \draw [line] (Execute) -- (Collect);
+
+% \draw [thick,dash dot] (Monitor) -- (Knowledge);
+% \draw [thick,dash dot] (Analyze) -- (Knowledge);
+% \draw [thick,dash dot] (Plan) -- (Knowledge);
+% \draw [thick,dash dot] (Execute) -- (Knowledge);
+% \draw [line] (Monitor) -- (Analyze);
+% \draw [line] (Analyze) -- (Plan);
+
+ \draw [line] (Data) -- (RNN);
+ \draw [line] (Collect) -- (Data);
+
+% \draw [arrow, line width=1.0mm] (TargetSystem) -- (Monitor);
+%  \draw [arrow, line width=1.0mm] (Execute) -- (TargetSystem);
+
+
+%\draw[black,thick,dotted] ($(Analyze.north west)+(-0.3,0.6)$)  rectangle ($(Plan.south east)+(0.3,-0.3)$) ++(-2.8,2.7) node[below] {Adaptation Decision} node[above] {} ++(-4.3,1.2) node[below] {XXX System} node[above] {};
+
+
+%\draw[black,thick] ($(Analyze.north west)+(-2.7,1.1)$)  rectangle ($(Plan.south east)+(1.6,-3.0)$);
+
+\draw[black,thick,dotted] ($(MAB.north west)+(-0.5,0.6)$) rectangle ($(MAB.south east)+(0.5,-0.6)$) ++(-1.1,2.4) node[below] {Decision Process};
+
+
+
+
+\end{tikzpicture}
+} 
+\caption{Overview of TVA process}
+\label{fig:TVAOverview}
+\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[h]
+
+\begin{center}
+
+
+
+%% Do this for right angles on connecting lines
+\tikzset{
+    -|/.style={to path={-| (\tikztotarget)}},
+    |-/.style={to path={|- (\tikztotarget)}},
+}
+
+%% Rec, circle, rrec, arrow
+
+\usetikzlibrary{fit, } %% Used for putting dotted box
+\usetikzlibrary{calc}
+
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{arrow}=[draw, -latex] 
+
+%\tikzstyle{database}= [fill=blue!20, cylinder, shape border rotate=90, draw,minimum height=2.2cm,minimum width=1.55cm]
+
+\tikzstyle{database}= [cylinder, shape border rotate=90, draw,minimum height=2.2cm,minimum width=1.55cm]
+
+% Define block styles
+\tikzstyle{line} = [draw, -latex']
+
+\tikzstyle{block} = [rectangle, draw, fill=white!20, text width=5em, text centered, minimum height=4em]
+\tikzstyle{circle} = [ellipse, draw, fill=white!20, text width=5em, text centered, minimum height=4em]
+
+
+\tikzstyle{rrec} = [rectangle, draw, fill=white!20, text width=5em, text centered, rounded corners, minimum height=4em]
+
+\scalebox{.9}{
+\begin{tikzpicture}[node distance = 3cm, line width=.5mm]
+   
+\node [circle] (TargetSystem) {Target System}; % Var name, Displayed Name
+
+\node [rrec, above of=TargetSystem] (Knowledge) {Knowledge}; % ? Change to database
+
+\node [rrec, left of=Knowledge] (Monitor) {Monitor};
+\node [rrec, above right of=Monitor] (Analyze) {Analyze};
+\node [rrec, right of=Analyze] (Plan) {Plan};
+\node [rrec, right of=Knowledge] (Execute) {Execute};
+
+ \draw [thick,dash dot] (Monitor) -- (Knowledge);
+ \draw [thick,dash dot] (Analyze) -- (Knowledge);
+ \draw [thick,dash dot] (Plan) -- (Knowledge);
+ \draw [thick,dash dot] (Execute) -- (Knowledge);
+ \draw [line] (Monitor) -- (Analyze);
+ \draw [line] (Analyze) -- (Plan);
+ \draw [line] (Plan) -- (Execute);
+
+ \draw [arrow, line width=1.0mm] (TargetSystem) -- (Monitor);
+  \draw [arrow, line width=1.0mm] (Execute) -- (TargetSystem);
+% \draw [line] (Execute) -- (TargetSystem);
+%\draw[->, line width=1mm] (0,0) -- (1,0);
+
+
+%	\draw[draw=black!60!black,line width=3pt,stealth-stealth] (TargetSystem)  -- (Monitor);
+
+%\path[draw=black,solid,line width=1mm,fill=black,preaction={-triangle 90,thin,draw,shorten >=-1mm} ] (1, 4) -- (3.3, 4);
+
+
+%  \draw (-2,0) -- ++(4,0) node[below] {a} node[above] {b};
+
+\draw[black,thick,dotted] ($(Analyze.north west)+(-0.3,0.6)$)  rectangle ($(Plan.south east)+(0.3,-0.3)$) ++(-2.8,2.7) node[below] {Adaptation Decision} node[above] {} ++(-4.3,1.2) node[below] {XXX System} node[above] {};
+
+
+\draw[black,thick] ($(Analyze.north west)+(-2.7,1.1)$)  rectangle ($(Plan.south east)+(1.6,-3.0)$);
+
+\end{tikzpicture}
+} 
+\caption{Self-Adaptation Loop}
+\label{fig:procOverview}
+\end{center}
+\end{figure}
+
+
+
+
+\end{document}

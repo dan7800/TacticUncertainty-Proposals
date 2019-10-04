@@ -1,0 +1,179 @@
+\section{Introduction}
+
+% ? Mention ASE paper someplace?
+
+% Should bandits in title be plural
+
+
+
+
+
+
+
+
+
+%The proposed work will enable autonomous systems to \textbf{better account for uncertainty} and \textbf{volatility and to operate in real world, volatile environments with/using small amounts of prior data}. \dan{modify this a bit to include the benefits of the ML stuff}
+
+%\textbf{The proposed work will enable autonomous systems to operate in real-world, volatile environments using small amounts of prior data through the use of Recurrent Neural Networks (RNNs).}
+
+%\textbf{The proposed work will enable autonomous systems to rapidly adapt to new and volatile environments using online evolution of recurrent neural networks (RNNs) to account for tactic volatility.}
+
+
+% DK: ? Should we add something about tactics in here as well?
+\textbf{The proposed work will enable autonomous systems to rapidly adapt to new and volatile environments using online evolution of recurrent neural networks (RNNs) and a multi-armed bandit approach.}
+
+
+
+
+
+% DK: This is ok, but doesn't mention anything specifically regarding tactic volatility
+
+
+%\dan{Add in the type of learning model that we will use, RNN - Make sure that it is introduced and that we briefly describe how and why it will be beneficial}
+%\dan{If a large contribution of the project will be in learning, it likely wouldn't be a bad idea to make that more clear in the introduction/opening statement.}
+
+Autonomous systems frequently operate in new and volatile environments that contain large amounts of uncertainty and variability. Therefore, it is imperative that autonomous systems be enabled to quickly adapt, and appropriately manage uncertainty and variability to remain effective, resilient and retain the ability to accomplish mission and system objectives. \emph{Tactics} are actions performed by autonomous systems to respond to changes in their environment or to achieve objectives. Tactic examples include reducing non-essential functionality on a UAV when battery levels are low, or the provisioning of an additional virtual machine in a web farm when the workload reaches a specific threshold. The decision-making components in autonomous systems rely upon accurate information to select the tactic(s) that will result in the most optimal outcome. Real-world systems will frequently encounter \emph{tactic volatility}, which is any rapid or unpredictable change that exists within the attributes of a tactic. For example, both tactic latency and cost may be highly volatile depending on the system's surrounding environment. A tactic of transmitting data could take longer than expected due to network congestion, or a tactic of utilizing an external resource could be more expensive due to a volatile variable pricing structure. 
+
+The anticipated latency and cost of a tactic is frequently a significant concern in the system's decision-making process, as they can impact which tactic(s) are selected and when they are invoked. Unfortunately, state-of-the-art decision-making processes in self-adaptive systems do not account for tactic volatility~\cite{Krutz_ase_2019, moreno2017adaptation}. This limitation can be highly problematic, adversely impacting the efficiency and effectiveness of the system. For example, a tactic may be statically defined to always take two seconds, leading the system to believe that it should begin the execution of this tactic two seconds before it is needed. However, if the tactic consistently takes longer than two seconds and the system cannot learn to account for this additional latency, then the tactic will frequently not be ready when needed.\dan{proofread}
+
+
+%For example, a system may expect a tactic to take two seconds to complete its execution, when in reality it has been observed to consistently take longer; thus leading to situations when the tactic is not available when needed since it is invoked too late.
+
+
+%For example, a system may execute a tactic too late to be effective if it assumes that the tactic will always take two seconds to conduct, when in reality it has been observed to consistently take longer.\dan{proofread this}
+
+%moving a physical component in a UAV could be more expensive due to mechanical problems.
+
+
+
+
+
+
+
+
+% What tactic volatility is
+% Its negative impact on the overall system - Why it is detrimental
+% How current systems do not account for tactic volatility
+
+
+
+
+%Information gathered by these autonomous systems come from various physical and software sensor streams that provide time series data at various intervals. This tactical data can be potentially unreliable and volatile, especially when operating in new or uncontrolled environments. Inaccurate information used in the decision-making process will frequently lead to decisions producing less than optimal benefit, or even undesired outcomes. Unfortunately, state-of-the-art decision-making processes in autonomous systems do not account for uncertainty and variability in the attributes of the tactic~\cite{moreno2017adaptation, Moreno:2017:CMP:3105503.3105511, camara2016analyzing}.
+
+%Some forms of tactic volatility include latency, cost, dependability and availability of the tactic.
+% DK: Might be a good idea to define these someplace
+ %For example, the cost and latency necessary to perform a tactic operation can be impacted by innumerable internal and external events. 
+A robust decision-making and prediction mechanism is needed to enable autonomous systems to better anticipate and account for tactic volatility to reduce uncertainty and to operate in new and dynamic environments. \ul{This pioneering research will develop a \emph{Tactic Volatility Aware} (TVA) solution that will enable autonomous systems to better account for volatility, especially when operating in new and variable environments with limited amounts of historical data.} This will be accomplished through a novel online neuro-evolution strategy that will progressively design recurrent neural networks (RNNs) for predicting tactical data. This will enable these RNNs to quickly adapt to new and dynamic sensors and environments via transfer learning, while simultaneously being able to detect and ignore anomalous, unreliable and potentially adversarial inputs. A multi-armed bandit component will be integrated into the system's decision-making process to better enable the system to account for tactic volatility and reduce tactic uncertainty. This component will direct the system's tactic uncertainty reduction (`explore') and execution (`exploit') operations.
+
+% This component will direct the system's tactic uncertainty reduction operations (`explore' and `exploit' operations 
+
+% 
+
+
+%\hl{A multi-armed bandit component will be combined with the system's decision-making process to enable the system to reduce uncertainty regarding the volatility of the tactic.}
+
+% A multi-armed bandit component will be integrated into the system's decision-making process to better enable the system to account for tactic volatility and reduce tactic uncertainty.
+
+ 
+
+
+%\hl{A multi-armed bandit approach will be combined with the system's decision-making process to help optimize the tactic-based decisions, especially when tactics contain uncertainty and the confidence of tactic predictions are low.}
+
+% DK: Should we state the type of approach that we will use? (\eg Epsilon-Greedy, Upper Confidence Bound, Bayesian)
+
+
+
+%optimize
+
+% help optimize the tactic-based decisions, especially when tactics contain uncertainty and the confidence of tactic predictions are low.
+
+
+%enable it to better account or uncertainty and volatlity with the tactics.\dan{how}
+
+%These will predict data from tactical sensor streams, enabling autonomous systems to swiftly adapt to different available sensor streams and environments, as well as detect and ignore anomalous, unreliable and potentially adversarial sensor inputs. The proposed TVA framework will address the following crucial challenges and limitations currently faced by autonomous systems:
+
+
+
+
+%Making well-informed, adaptive tactical decisions relies on accurate forecasts of the various sensor streams available to the autonomous system. Prior work by the PIs has shown that utilizing a novel parallel neuro-evolution technique can find more accurate recurrent neural network (RNN) structures for time series data prediction faster than training traditional fixed layer architectures in a sequential manner~\cite{desell-exalt-coal-2019}. We propose to expand this neuro-evolution technique to allow for the automated design of generative RNNs to account for sensor uncertainty and to evolve existing RNNs to swiftly account for modified sensor inputs.
+
+%1. We can evolve RNNs as generative models, where the RNN can predict all expected future inputs from sensors. If one or more inputs are off we can utilize predicted values for predictions instead of actual values in the case of sensor damage, degradation or inaccuracies due to a new or uncontrolled environment.
+
+%2. The sensors available to an autonomous system may change over time due to damage or acquisition of new technologies (?components?). Instead of designing and training entirely new RNNs every time a sensor becomes unavailable or available, we can continue to use it but drop out unused/broken sensors and evolve new connections for new sensors, continuing the neuro-evolution process from a previously well trained RNN on that system.  This will allow swift transfer of previous knowledge to the new set of sensors.
+
+
+
+We propose to expand upon current state-of-the-art techniques in several ways to facilitate the use of autonomous systems in new and volatile environments:%\dan{add MAB for this?}
+
+\begin{enumerate}[noitemsep]
+
+%	\item The proposed process must enable the autonomous system to more effectively account for uncertainty and variability in its operating environment. 
+
+
+    \item The proposed framework will swiftly adapt to operations in new, uncontrolled environments, or to changes in sensory inputs due to damage or acquisition of new components.
+    
+    \item The framework will provide metrics for both confidence of predictions as well as variance of parameters used for tactical decision making.
+    
+    
+%        \item The framework will support systems in learning more information about tactics - MAB?\dan{? remove}
+
+
+    %\item The framework will provide measures of certainty to a system's sensory input to account for damage or adversarial activity. \dan{can this be removed/integrated into the above item? The both refer to confidence/certainty}
+    
+    
+    %\hl{The calculated historical variance will be included into the decision-making process}\dan{fix}
+    
+    % For future submissions consider how a human could make use of this certainy in a human/paired team
+
+%	\item When prior mission data is available, the system should incorporate this information into its decision-making process.
+
+	\item The proposed work will support systems in better acting proactively to ensure that specifications defined in the \emph{Service Level Agreement} (SLA) are adhered to.
+
+	\item To support its inclusion a wide-range of existing systems, the proposed framework will easily integrate into existing autonomous decision-making processes and strategies such as MAPE-K~\cite{kephart2003vision} and Rainbow~\cite{garlan2004rainbow}.
+
+\end{enumerate}
+
+The proposed TVA solution is the first that enables autonomous systems to account for \emph{Tactic Volatility}. Through the novel use of online neuro-evolution to adapt RNNs, TVA may be quickly applied to new sensor platforms and learn in new environments with limited amounts of historical data. This will enable the autonomous system to operate in new environments and react to new and unpredictable scenarios while enhancing system resiliency.\dan{is this redundant?}
+
+%%%%%%%
+%To the best of our knowledge, the proposed TVA solution is the first that enables autonomous systems to account for \emph{Tactic Volatility}. By using an online neuro-evolution to adapt RNNs, TVA will be able to swiftly applied to new sensor platforms as well as learn in new environments with limited amounts of historical data, thus supporting the autonomous system to operate in new environments and to better react to new and unforeseen situations.\dan{clean this section up}\dan{Add a few more words about the learning solution and why it is good}
+
+% The benefits our work can have on a variety of self-adaptive/autonomous systems
+% Why RNN will be a useful solution
+
+% 
+
+
+\subsection{Motivating Example}
+\label{sec: motivatingexample}
+
+% If there is space, add something in about how the confidence/variance could impact the decision
+
+\noindent\textbf{Motivating Example:} The goal of a cloud-based, self-adaptive system~\cite{moreno2017adaptation} is to maximize utility while minimizing cost. An SLA defines the target response time ($T$) and how utility ($U$) is calculated. %The system incurs penalties if the target response time is not met and accrues rewards for meeting the target average response time against the measurement interval. %In this scenario, the cost is directly proportional to the number of servers used. 
+The average response rate is $a$, the average response time is $r$, the maximum request is $k$, and the length of each interval is defined as $\tau$. Provided content is reduced as necessary using a dimmer value, ($d$). Optional content has reward of ($R_O$) which produces a higher reward than mandatory content ($R_M$). Cost ($C$) could be the monetary or energy cost:
+
+\begin{equation} \label{eq: motivatingExample}
+	U = \left\{ \begin{array}{rl}
+ 	(\tau a (dR_O+(1-d)R_M)/C~~~~r\leq T \\ 
+  	(\tau \min (0,a-k)R_O)/C~~~~r> T 
+       \end{array} \right.
+\end{equation}
+
+This system can account for increases in user traffic using two tactic options: (I) reducing the proportion of responses that include the optional content (dimmer), and (II) adding a new server. While reducing optional content has negligible latency, adding a new server can take several minutes. Keeping the system/process presented above in mind, we will next briefly describe the types of volatility that would be encountered and why each is important. % DK: ? Need a transitioning sentence?  <-- ALEX: added transition
+
+\vspace{1mm} \noindent \textbf{Tactic Latency Volatility: }{If the system anticipates that the response threshold will be surpassed in the immediate future, then the system could proactively start the tactic to add a server and keep the response time under the defined threshold. Overestimating latency could result in scenarios where the system unnecessarily incurs additional cost, as servers would be `active' longer than necessary. Additionally, if the system determines that it is likely to surpass the defined response time threshold before a new server can be added, then the most appropriate system action may be to use the faster tactic that reduces the amount of optional content while it waits for a new server is being added. Improper tactic latency predictions can lead to situations where the system executes the tactic too soon or too late, or even selects the improper tactic for the encountered scenario. \emph{Accounting for tactic latency volatility is a paramount concern, especially when utilizing a proactive adaptation approach, or when utilizing complementary tactics.}
+
+%If the system anticipates that the response threshold will be surpassed in the immediate future, then the system could proactively start the tactic to add a server and keep the response time under the defined threshold. %Alternately, the system may determine that latency readings have become highly volatile while not yet surpassing a threshold, in this case the system may utilize strategies on which latency has less effect. 
+%Overestimating latency could result in scenarios where the system unnecessarily incurs additional cost, as servers would be `active' longer than necessary. Additionally, if the system determines that it is likely to surpass the defined response time threshold before a new server can be added, then the most appropriate action may be to use the faster tactic that reduces the amount of optional content while a new server is being added. 
+%Improper tactic latency predictions can result in the system executing the tactic too soon or too late. It can also lead to the selection of an inappropriate tactic leading to a less than optimal outcome. \emph{Accounting for tactic latency volatility is a paramount concern, especially when utilizing a proactive adaptation approach, or when utilizing complementary tactics.} 
+
+
+
+\vspace{1mm} \noindent \textbf{Tactic Cost Volatility:} It is important to account for cost volatility to ensure accurate utility calculations. In the event that the cost is defined to be higher than what the system is actually encountering in the real-world, then this may lead to scenarios where optional ($O$) content is shown too infrequently. Conversely, if the cost is defined to be lower than what is actually being encountered, then could lead to scenarios where optional ($O$) content is shown too frequently. \emph{A volatility-aware solution that enables a more accurate estimate of the actual cost is needed to enable the system to make better decisions that lead to more optimal outcomes.}
+
+\vspace{1mm} \noindent \textbf{Reactive Specifications Monitoring:} If the motivating example was a purely responsive system and did not employ any proactive functionality, it will only determine if the defined response threshold ($T$) is being surpassed at a given moment. This is problematic since the tactic of adding additional resources to reduce response time in the example entails latency, meaning that the system will need to adapt \emph{before} the tactic is actually needed. Otherwise, the system will incur penalties or not realize rewards while it waits for the tactic to become available. \emph{A process that enables the system to better anticipate how it will perform in accordance with an SLA would help the system to operate optimally in dynamic environments.\dan{consider removing this}} % DK: This is not discussed in other places in the proposal 
+
+
+
+% Add something regarding the confidence & variance of parameters -- If this doesn't go here, then it needs to go someplace
+% Clean up this wording

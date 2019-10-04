@@ -1,0 +1,297 @@
+\documentclass[12pt]{article}
+
+\usepackage{cite}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{color}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{enumitem} % Use for enumerating A, B, C etc...
+\urlstyle{same} % Used for formatting formatting url footnotes
+\usepackage{fancyhdr} % Header
+%\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{soul} % highlighting
+%\usepackage{pgfgantt} % Project timeline
+\usepackage[titletoc,toc,title]{appendix} % Need for appendix, page numbering
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta,fit,positioning}
+%\usepackage{amssymb,graphicx} % Events and milestones
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{bbm}
+\usepackage{amssymb}
+%\usepackage{booktabs} % used for \toprule in tables
+%\usepackage{wrapfig,booktabs} % Wrap text around table
+%\usepackage{booktabs} % used for \toprule in tables
+%\usepackage[table,xcdraw]{xcolor}
+%\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+%\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}      
+%\usepackage[final]{pdfpages}
+%\usepackage{tocloft} % Table of contents spacing
+%\usepackage{xcolor,colortbl} %%% Color Table Header
+
+%\usepackage{makecell}
+
+%\usepackage{subcaption} % Side by side images
+%\usepackage{pgfplots} % Bar chart. Graph
+
+\usepackage{xspace} % Needed for et al.
+%\newcommand{\etal}{{et al.\@\xspace}} 
+\newcommand{\etal}{\emph{et~al.}\xspace} 
+
+\usepackage[bottom=1in, left=1in, right=1in, top=1in]{geometry} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+%\usepackage{lipsum}
+%\usepackage{pgfgantt}
+
+%\usepackage{minted} % Side by side code
+
+
+\newcommand{\todo}[1]{\textcolor{cyan}{\textbf{[#1]}}}
+\newcommand{\dan}[1]{\textcolor{blue}{{\it [Dan says: #1]}}}
+\newcommand{\qi}[1]{\textcolor{red}{{\it [Qi says: #1]}}}
+\newcommand{\sakshi}[1]{\textcolor{green}{{\it [Sakshi says: #1]}}}
+
+
+%%% Start column formatting
+% Note: In overleaf sometimes columns fail to render. Check on PDF Output
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}} % raggedright= align left
+\definecolor{Gray}{gray}{0.80} % the lower the #, the darker it gets
+%%% End Table formatting
+
+%%%% Start toggling showing/hiding some information
+\newif\ifShowAll
+\ShowAlltrue % Display All Info
+%\ShowAllfalse % Hide Some Info
+
+
+
+
+%%%%%%%%
+\newcommand{\Title}{CREATE TITLE}
+
+\newcommand{\shortTitle}{SHORT TITLE} % Used in the heading just so it fits
+
+%\newcommand{\Title}{XXXX}
+
+%\newcommand{\shortTitle}{XXXX} % Used in the heading just so it fits
+
+\newcommand{\CallNumber}{N00421-18-S-0001} % BAA Number
+\newcommand{\CallName}{XXXX}
+%\newcommand{\BAANumber}{N00421-18-S-0001}
+
+
+
+\usepackage{fancyhdr} % Header
+\pagestyle{fancy}
+\lhead{\emph{\shortTitle}}
+\rhead{Krutz (RIT)}
+%\lhead{\shortTitle}
+%\rhead{}
+
+
+
+\usepackage{lastpage}
+
+\setlength\cftparskip{-.7pt} %% Table of contents spacing
+%\setlength\cftbeforechapskip{0pt}
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.3mm}} % Defines a new command for the horizontal lines, change thickness here
+
+%%%%%%% Start new Title format
+
+
+%% DK: I am not sure if we should have this
+%\noindent\large \CallName, \CallNumber\\[.20cm] % Call Name
+
+\noindent\large \CallNumber\\[.20cm] % Call Name
+
+%\noindent \LARGE \textbf{\Title}\\[.10cm] % Title
+\noindent \LARGE \textbf{\Title}\\[.10cm] 
+
+
+\noindent \large  \underline{\textbf{Technical Proposal}}\\ [.15cm] 
+
+\begin{tabular}{ L{50mm} L{100mm} }
+
+%\normalsize \textbf{Technical Proposal:} & \normalsize  \CallName, \CallNumber  \\
+
+%\noindent\large Technical Proposal: N00174-18-0001\\[.20cm]
+%\noindent\large NEC Technical POC: \\[.20cm]
+%\noindent\large Topic Number: \\[.20cm]
+
+\normalsize \textbf{BAA Number:} & \normalsize \CallNumber  \\
+
+
+\normalsize \textbf{Proposed Title:} & \normalsize  \Title  \\ 
+\normalsize \textbf{Research opportunity area of interest:} & \normalsize  XXXXX  \\ 
+
+
+\normalsize \textbf{Technical POC/PI:} & \normalsize  Dr. Daniel Krutz \\
+ & \vspace{-2mm} \normalsize Department of Software Engineering
+ \\
+
+   & \vspace{-4mm} \normalsize 152 Lomb Memorial Drive \\
+   & \vspace{-6mm} \normalsize Rochester, NY 14623 \\
+   & \vspace{-8mm} \normalsize Phone: (585) 475-2896 \\
+   & \vspace{-10mm} \normalsize Email: dxkvse@rit.edu \\
+
+
+
+\vspace{-6mm}\normalsize \textbf{Administrative POC:} & \vspace{-6mm} \normalsize Ms. Laura Kleiman \\
+
+%   & \vspace{-8mm} \normalsize Senior Research Administrator  \\
+   & \vspace{-10mm} \normalsize Sponsored Research Services  \\
+   & \vspace{-12mm} \normalsize Rochester Institute of Technology  \\
+   & \vspace{-14mm} \normalsize University Services Center, Suite 2400  \\
+   & \vspace{-16mm} \normalsize 141 Lomb Memorial Drive, Rochester, NY 14623-5608   \\
+   & \vspace{-18mm} \normalsize Rochester, NY 14623-5608  \\
+   & \vspace{-20mm} \normalsize Phone: (585)-475-2262  \\
+%   & \vspace{-22mm} \normalsize Facsimile: (585)-475-2262  \\
+   & \vspace{-22mm} \normalsize Email: ljksrs@rit.edu  \\
+
+
+%BAA Number, proposed title, research opportunity area of interest, contracts and technical points of contact, telephone number, facsimile number, and E-mail address
+
+
+\end{tabular}
+
+ \end{titlepage}
+
+\cfoot{\thepage}
+\pagenumbering{alph} % Start roman numbering
+\setcounter{tocdepth}{1} % Show sections
+
+\cfoot{} % Leave blank
+
+
+%%%%% TOC - Start
+%\renewcommand\contentsname{Table of Contents}
+%\tableofcontents
+%\listoffigures
+%\listoftables
+%\newpage
+
+%%%%% TOC - End
+
+\setcounter{page}{1}
+\pagenumbering{arabic} % Switch to normal numbers
+
+%\cfoot{\thepage\ of \pageref{LastPage}}
+\fancyfoot[C]{Page~\thepage~of~\pageref{lastpage}}
+
+\section{Technical Concept}
+
+
+%\subsection{Motivating Example}
+%\subsubsection{Motivating Example}
+%\subsection{Technical Objectives}
+%\subsection{Related Research}
+
+
+%\subsection{Technical Approach} 
+
+%\newcommand{\TA}{AAAAAA}
+%\newcommand{\TB}{BBB}
+%\newcommand{\TC}{CCCC}
+
+%\vspace{-2mm}
+%\addcontentsline{toc}{section}{Task 1: \TA}
+%\subsubsection{Task 1: \TA} \vspace{-2mm} 
+
+
+
+\section{Future Naval Relevance}
+% Future Naval Relevance – A description of potential Naval relevance and contributions of the effort to the agency’s specific mission.
+
+
+
+\section{Navy Lead}
+% Navy Lead: Provide the name, organizational code, and phone number of the NAWCAD lead, if known. Leave this entry blank if there is no Navy Lead.
+
+
+\section{Cost Estimate} % Required Section
+% Rough Order of Magnitude cost estimate
+
+
+
+
+
+%The total budget is \$400k yr for a total cost of \$1.6 million for the four year project. Our budget will include: I) Summer support for the PIs (Yu and Krutz) II) PhD Student support III) Equipment IV) Travel support for collaborating DOD employees (who we already have a close relationship with), along with identified ONR collaborators V) The hire of a DOD consultant to act as a technical advisor. CO-PI Krutz has experience working with DOD agencies including researchers at the AFRL. A broad overview of our funding plan for each fiscal year is shown in Table~\ref{table:budget}.
+
+
+% \vspace{-1mm}
+% \begin{table}[h]
+% \begin{center}
+% \caption{Budget Summary}
+% \label{table:budget}
+
+% \begin{tabular}{ c | c | c | c }
+			
+%   \textbf{Y1} & \textbf{Y2} & \textbf{Y3} & \textbf{Y4} \\   \hline
+%   400k & 400k & 400k & 400k \\
+%    \end{tabular}
+%   \end{center}
+% \vspace{-4mm}
+% \end{table}
+
+% \vspace{-3mm}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\label{lastpage}
+\cleardoublepage
+
+
+\appendix
+%\addcontentsline{toc}{section}{Appendix}
+%\begin{appendices}
+%\chapter{Some Appendix}
+
+
+%% DK: Put onto a different page since it does not count against the page limit
+\setcounter{page}{1}
+
+%\addcontentsline{toc}{subsection}{Project Schedule}
+\cfoot{\thepage}
+\pagenumbering{roman}
+%\section{Appendix}
+
+%\input{sections/Appendix.tex}
+
+
+%% I think the appendix goes before the bib. Otherwise, I could see people missing it
+\newpage
+\pagebreak
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{plain}
+\bibliography{refs}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+% Possible PMS
+%	

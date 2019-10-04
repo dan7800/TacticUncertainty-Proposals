@@ -1,0 +1,275 @@
+\documentclass[12pt]{article}
+
+\usepackage{cite}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{color}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{enumitem} % Use for enumerating A, B, C etc...
+\urlstyle{same} % Used for formatting formatting url footnotes
+\usepackage{fancyhdr} % Header
+%\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage[table,xcdraw]{xcolor} % helps to format TOC
+\usepackage{soul} % highlighting
+%\usepackage{pgfgantt} % Project timeline
+\usepackage[titletoc,toc,title]{appendix} % Need for appendix, page numbering
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta,fit,positioning}
+%\usepackage{amssymb,graphicx} % Events and milestones
+\usepackage{amsmath}
+\usepackage{mathtools}
+%\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{lastpage}
+
+%\usepackage{algorithm}
+%\usepackage[noend]{algpseudocode}
+
+
+
+\usepackage{framed}		% Allows drawing text boxes
+\usepackage{pgfgantt}
+\usepackage{rotating}
+\usepackage[graphicx]{realboxes}
+\usepackage{pgf-umlsd}
+\usepackage{tikz}
+
+
+
+
+\usepackage{xspace} % Needed for et al.
+\newcommand{\ie}{\emph{i.e.,}\xspace}
+\newcommand{\eg}{\emph{e.g.,}\xspace}
+\newcommand{\etc}{etc.\xspace}
+\newcommand{\etal}{\emph{et~al.}\xspace}  
+
+% Page margins etc....
+\usepackage[bottom=1in, left=1in, right=1in, top=1in]{geometry} % Should all be 1
+%.85
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+%\usepackage{wrapfig}
+%\usepackage{lipsum}
+%\usepackage{pgfgantt}
+
+%\usepackage{minted} % Side by side code
+
+\newcommand{\todo}[1]{\textcolor{cyan}{\textbf{[#1]}}}
+\newcommand{\dan}[1]{\textcolor{blue}{{\it [Dan: #1]}}}
+\newcommand{\qi}[1]{\textcolor{red}{{\it [Qi: #1]}}}
+\newcommand{\alex}[1]{\textcolor{green}{{\it [Alex: #1]}}}
+\newcommand{\travis}[1]{\textcolor{brown}{{\it [Travis: #1]}}}
+
+%%% Start column formatting
+% Note: In overleaf sometimes columns fail to render. Check on PDF Output
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}} % raggedright= align left
+\definecolor{Gray}{gray}{0.80} % the lower the #, the darker it gets
+%%% End Table formatting
+
+\newcommand{\descStep}[2]{\noindent \textbf{#1: } #2}
+\newcommand{\objective}[3]{\vspace{2mm} \noindent \textbf{{Objective #1 - #2: }} #3} % Describing objectives
+
+%%%% Start toggling showing/hiding some information
+\newif\ifShowAll
+\ShowAlltrue % Display All Info
+%\ShowAllfalse % Hide Some Info
+
+
+% Using Recurrent Neural Networks to Account for Tactic Volatility and Improve the Decision-Making Process of Autonomous Systems 
+
+% Accounting for Tactic Volatility in Self-Adaptive Systems Using % Accounting for Tactic Volatility: Improving Autonomous System Decision-Making Using Evolving Recurrent Neural Networks
+
+%Accounting for Tactic Volatility: Improving Autonomous System Decision-Making Using Evolving Recurrent Neural Networks and Multi-Armed Bandits
+
+% Accounting for Tactic Volatility: Improving Autonomous System Decision-Making Using Evolving Recurrent Neural Networks and Multi-Armed Bandits
+
+\newcommand{\Title}{Accounting for Tactic Volatility: Improving Decision-Making in Autonomous System Using Evolving Recurrent Neural Networks and \hl{Multi-Armed Bandits}}
+
+\newcommand{\shortTitle}{Accounting for Tactic Volatility in Autonomous Systems} % Used in the heading just so it fits
+
+\newcommand{\CallNumber}{W911NF-17-S-003} % BAA Number
+\newcommand{\CallName}{XXXX}
+%\newcommand{\BAANumber}{N00421-18-S-0001}
+
+\usepackage{fancyhdr} % Header
+\pagestyle{fancy}
+\lhead{\emph{\shortTitle}}
+%\rhead{Krutz (RIT)}
+\rhead{Krutz: dxkvse@rit.edu}
+%\lhead{\shortTitle}
+%\rhead{}
+
+
+%\setlength\cftparskip{-.7pt} %% Table of contents spacing
+%\setlength\cftbeforechapskip{0pt}
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.3mm}} % Defines a new command for the horizontal lines, change thickness here
+
+%%%%%%% Start new Title format
+
+
+%% DK: I am not sure if we should have this
+%\noindent\large \CallName, \CallNumber\\[.20cm] % Call Name
+
+%  \textsc{\Large White Paper Submission\dan{update page with required information}}\\[0.5cm] % Major heading
+
+%\noindent\large \CallNumber\\[.20cm] % Call Name
+
+
+\begin{center}
+  \textsc{\Large White Paper Submission}\\[0.5cm] % Major heading such as course name
+  \textsc{\large \CallNumber}\\[1.5cm]   %% Fix this
+\end{center}
+
+%\noindent \LARGE \textbf{\Title}\\[.10cm] % Title
+\noindent \Large \textbf{\Title}\\[.10cm] 
+
+
+\noindent \large  \underline{\textbf{Technical Proposal}}\\ [.15cm] 
+
+\begin{tabular}{ L{50mm} L{100mm} }
+
+%\normalsize \textbf{Technical Proposal:} & \normalsize  \CallName, \CallNumber  \\
+
+%\noindent\large Technical Proposal: N00174-18-0001\\[.20cm]
+%\noindent\large NEC Technical POC: \\[.20cm]
+%\noindent\large Topic Number: \\[.20cm]
+
+%\normalsize \textbf{BAA Number:} & \normalsize \CallNumber  \\
+%\normalsize \textbf{Proposed Title:} & \normalsize  \Title  \\ 
+\normalsize \textbf{Research opportunity area:} & \normalsize  Artificial Intelligence and Machine Learning  \\ 
+% Research opportunity area of interest
+
+\normalsize \textbf{Technical POC/PI:} & \normalsize  Dr. Daniel Krutz \\
+ & \vspace{-2mm} \normalsize Department of Software Engineering
+ \\
+
+   & \vspace{-4mm} \normalsize 152 Lomb Memorial Drive \\
+   & \vspace{-6mm} \normalsize Rochester, NY 14623 \\
+   & \vspace{-8mm} \normalsize Phone: (585) 475-2896 \\
+   & \vspace{-10mm} \normalsize Email: dxkvse@rit.edu \\
+   
+   
+   
+%   \normalsize \textbf{Co-PI:} & \normalsize  Dr. Daniel Krutz \\
+% & \vspace{-2mm} \normalsize Department of Software Engineering
+ \\
+
+%   & \vspace{-4mm} \normalsize 152 Lomb Memorial Drive \\
+%   & \vspace{-6mm} \normalsize Rochester, NY 14623 \\
+%   & \vspace{-8mm} \normalsize Phone: (585) 475-2896 \\
+%   & \vspace{-10mm} \normalsize Email: dxkvse@rit.edu \\
+   
+   
+   
+   
+   
+
+%\vspace{-6mm}\normalsize \textbf{Administrative POC:} & \vspace{-6mm} \normalsize Ms. Laura Kleiman \\
+
+%%   & \vspace{-8mm} \normalsize Senior Research Administrator  \\
+%   & \vspace{-9mm} \normalsize Sponsored Research Services  \\
+%   & \vspace{-11mm} \normalsize Rochester Institute of Technology  \\
+%   & \vspace{-13mm} \normalsize University Services Center, Suite 2400  \\
+%   & \vspace{-15mm} \normalsize 141 Lomb Memorial Drive, Rochester, NY 14623-5608   \\
+%   & \vspace{-17mm} \normalsize Rochester, NY 14623-5608  \\
+%   & \vspace{-19mm} \normalsize Phone: (585)-475-2262  \\
+%%   & \vspace{-22mm} \normalsize Facsimile: (585)-475-2262  \\
+%   & \vspace{-21mm} \normalsize Email: ljksrs@rit.edu  \\
+
+
+%BAA Number, proposed title, research opportunity area of interest, contracts and technical points of contact, telephone number, facsimile number, and E-mail address
+
+
+\end{tabular}
+
+ \end{titlepage}
+
+\cfoot{\thepage}
+\pagenumbering{alph} % Start roman numbering
+\setcounter{tocdepth}{1} % Show sections
+
+\cfoot{} % Leave blank
+
+
+%%%%% TOC - Start
+%\renewcommand\contentsname{Table of Contents}
+%\tableofcontents
+%\listoffigures
+%\listoftables
+%\newpage
+
+%%%%% TOC - End
+
+
+\setcounter{page}{1}
+\pagenumbering{arabic} % Switch to normal numbers
+
+%\cfoot{\thepage\ of \pageref{LastPage}}
+\fancyfoot[C]{Page~\thepage~of~\pageref{lastpage}}
+
+
+\input{5pg_sections/5pg-01-introduction.tex}
+\input{5pg_sections/5pg-02-objectives.tex}
+\input{5pg_sections/5pg-03-approach.tex}
+\input{5pg_sections/5pg-04-summary.tex}
+\input{5pg_sections/5pg-05-required_support.tex}
+\input{5pg_sections/5pg-06-cost.tex}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\label{lastpage}
+\cleardoublepage
+
+
+\appendix
+
+
+%% DK: Put onto a different page since it does not count against the page limit
+\setcounter{page}{1}
+
+\cfoot{\thepage}
+\pagenumbering{roman}
+
+
+
+%%%%%%%%%%%%%%%%%%
+\newpage
+\input{5pg_sections/5pg-07-addendium.tex}
+
+
+
+
+
+%% I think the appendix goes before the bib. Otherwise, I could see people missing it
+\newpage
+\pagebreak
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
+
+
+%% Possible DARPA program
+%   https://www.darpa.mil/program/assured-autonomy
+
+
+
+
+
+
+%%%%%%%%%%
+- In cases where data is unknown, use MAB
+

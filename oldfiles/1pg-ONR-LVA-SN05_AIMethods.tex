@@ -1,0 +1,183 @@
+\documentclass{article}
+
+\usepackage{cite}
+\usepackage{listings}
+%\usepackage{times}
+\usepackage{color}
+\usepackage{url}
+\urlstyle{same} % Used for formatting formatting url footnotes
+\usepackage{soul} % highlighting
+\usepackage{forloop} % Project timeline
+\usepackage{tabularx} % table text width
+\usepackage{xcolor,colortbl} %%% Color Table Header
+\usepackage{fancyhdr} % Header
+\usepackage{xspace} % Needed for et al.
+\newcommand{\etal}{{et al.\@\xspace}}
+
+\usepackage{wrapfig}
+\usepackage{pgfgantt}
+
+\usepackage{enumitem} % Reduce spacing of enumerated items
+\usepackage{titlesec} % Size of section sizes
+
+\titleformat*{\section}{\large\bfseries} % Section labels smaller 
+
+% Evaluating AI Methods for Enabling Complex Decision-Making in Tomorrow's Battlefield
+
+\newcommand{\Title}{Evaluating AI Methods for Enabling Complex Decision-Making in Tomorrow's Battlefield}
+\title{\Title} 
+
+\author{
+\textbf{Technical POC:} Daniel E. Krutz\\
+%       Rochester Institute of Technology\\
+%	Assistant Professor\\ % Removed for space
+%	Department of Software Engineering \& Center of Cybersecurity \\
+%	Mailing Address: 134 Lomb Memorial Drive \\
+%	Rochester, NY 14623-5608 \\
+%	Voice: 585-475-2896 \\
+       dxkvse@rit.edu\\
+}
+ \date{} % Remove the date
+
+
+\usepackage[bottom=1in, left=1in, right=1in]{geometry} %% Use this to make the page wider
+
+\newcommand{\todo}[1]{\textcolor{cyan}{\textbf{[#1]}}}
+
+\newcommand{\dan}[1]{\textcolor{blue}{{\it [Dan says: #1]}}}
+\newcommand{\anthony}[1]{\textcolor{red}{{\it [Anthony says: #1]}}}
+
+
+\pagestyle{fancy}
+\lhead{\Title} % Leave empty to keep sections from being shown
+%\lhead{2018 AFRL-SFFP}  % Make sure to change this for other submissions
+\rhead{Daniel E. Krutz}
+
+\usepackage{lastpage}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+\begin{document}
+\maketitle
+
+\section{Introduction} % Probably change the title of this
+
+% Understand potential contributions of AI decision-making processes
+%	What parts of complex decision-making problem is each best-suited to address
+
+
+Success on the battlefield of tomorrow will be largely determined by the ability to make complex decisions in an efficient and effective manner. There are many different possible AI approaches and combinations to address complex decision making systems. We will provide a comprehensive analysis and demonstration of the aspects of various complex decision-making processes, evaluating them based upon real-world battlefield \hl{criteria/inputs} in several simulation environments. 
+
+
+% Don't just evaluate, come up with a better approach? - Make sure that I am writing to the proposal
+
+
+
+% Mention some of the approaches we will evaluate % ? Not sure where this section will go
+
+
+
+\section{Evaluation Criteria} % Reword
+
+% \begin{enumerate}[noitemsep]
+    
+
+% 	\item 
+
+% \end{enumerate}
+We will evaluate each decision-making approach based upon several criteria that often impact an AI approach on the battlefield. Some include:
+\begin{enumerate}[noitemsep]
+    
+	\item \textbf{Security:} Ability to recognize and react to security threats.
+%	\item \textbf{Dependability:} XXX
+	\item \textbf{Robustness:} Ability of system to cope with errors during execution and cope with erroneous input.
+	\item \textbf{Resiliency:} Ability to provide and maintain an acceptable level of service in the face of errors and challenges.
+
+
+    %Ability of system to react to various situations and unknowns, but still accomplish desired mission objectives.
+    \item \textbf{Utility benefit:} Ability to select the most optimal decision.
+ %   \item \textbf{Dependability:} XXX
+% 	\item \textbf{Learning Ability:} XXX
+
+    \item \textbf{Prescient (predictive) nature:} Ability to anticipate decisions before they must be made.
+
+%	\item Assurance % ? include this
+
+	% Maximum latency determination time
+    % 
+
+\end{enumerate}
+
+
+\section{Evaluation Process} % Reword
+
+
+We will evaluate each AI approach using several different methods. These include:
+
+
+\begin{enumerate}[noitemsep]
+    
+	\item \textbf{R:} We will use \emph{R} to construct statistical analysis's for each of the evaluate AI methods.
+	\item \textbf{Existing Simulators:} Existing simulators including, but not limited to SWIM\footnote{\url{https://github.com/cps-sei/swim}} and RUBiS\footnote{\url{http://rubis.ow2.org/}} will be used to evaluate each AI approach. When necessary, modifications will be made to each simulation environment.    
+	\item \textbf{Custom-built simulator:} We will construct our own custom-built simulator to properly test each AI approach based upon the evaluation criteria. A primary objective of this simulator will be to emulate real-world occurrences as much as possible. For example, to simulate uncertainty in the AI approach, real external APIs will be used; ones whose availability or output is stochastic. Some of the aspects of a real-world system to be simulated also include: Sensor failure, Decision-making (Latency) volatility, security attacks, environmental conditions, unexpected events (uncertainty).
+	\item \textbf{Physical Devices:} We will implement evaluated algorithms into actual drones/UAVs to further evaluate the AI approaches. RIT is well-known for its software development experience and has a large drone/UAV on site testing facility.    
+    
+    % R
+% Existing Simulator (SWIM, RUBIS etc...)
+% Custom-built simulator that will mimic various battlefield environments. These will emulate:
+%	Sensor failure
+% 	Decision-making (Latency) volatility
+% 	Security attacks
+%	Environmental conditions
+%	Unexpected events (uncertainty)
+% In Real UAVs on RIT's campus (very briefly mention the resources that we have) - SWARMS, Single UAVs etc....
+    
+
+\end{enumerate}
+
+
+
+
+% Include an image for this?
+
+
+% Evaluation methods, evaluated metrics, 
+
+
+
+% R
+% Existing Simulator (SWIM, RUBIS etc...)
+% Custom-built simulator that will mimic various battlefield environments. These will emulate:
+%	Sensor failure
+% 	Decision-making (Latency) volatility
+% 	Security attacks
+%	Environmental conditions
+%	Unexpected events (uncertainty)
+% In Real UAVs on RIT's campus (very briefly mention the resources that we have) - SWARMS, Single UAVs etc....
+
+
+
+% https://lirias.kuleuven.be/bitstream/123456789/278888/1/2009HotTopics.pdf
+
+
+% http://drops.dagstuhl.de/volltexte/2014/4508/pdf/dagrep_v003_i012_p067_s13511.pdf
+
+
+% Types of changes we will introduce
+%	Failures
+%	
+
+
+
+
+
+
+% Maybe move this down quite a bit
+%\bibliographystyle{plain}
+%\bibliography{latency}
+
+\end{document}
+
+
+
+
+

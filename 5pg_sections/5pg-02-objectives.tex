@@ -1,0 +1,103 @@
+\vspace{-2mm}\section{Technical Objectives}\vspace{-2mm}
+%In this section, we describe the proposed Tactic Volatility Aware solution into XXX primary technical objectives:
+
+
+Our TVA approach  is the first effort to provide support for predicting tactic volatility in self-adaptive/autonomous systems. Our work has the following key objectives:
+
+
+%\vspace{2mm} \noindent \textbf{Objective I: Predicting Tactical Data and Volatility with Recurrent Neural Networks: }%Autonomous systems typically collect data via various sensors which arrives as time series with varying frequencies.
+
+\objective{I}{Online Evolution of Recurrent Neural Networks to Predict Tactical Data}{Autonomous systems frequently collect time series data using its sensors. Typically this data consists of continuous parameters (\eg altitude, energy consumption, speed, engine RPMs, outsite air temperature, \etc), but may also consist of discrete parameters (\eg weather conditions, user/system commands, \etc). Recurrent Neural Networks (RNNs), especially with modern memory cell architectures -- such as LSTM (long short-term memory), GRU (gated recurrent unit), Delta-RNN and others -- are excellent at determining \h{long time}\dan{correct?} range dependencies and predicting future time series values. To more appropriately handle tactic volatility, we will extend these to not only predict future \hl{sensor}\dan{keep word?} parameters \emph{but also a confidence interval for those predictions} so the system can be better informed of the risk for using such a \hl{?tactic?} prediction.
+
+In some circumstances knowing the amount of volatility will be more important than knowing a specific predicted value. The variance of data streams used to make tactical decisions will also be tracked so that it can be used to make better informed tactic-based decisions, as well as the historical prediction error rates providing a level of confidence for the predictions.}
+
+
+
+%\vspace{2mm} \noindent \textbf{Objective I - Online Evolution of Recurrent Neural Networks to Predict Tactical Data: }Autonomous systems frequently collect time series data using its sensors. Typically this data consists of continuous parameters (\eg altitude, energy consumption, speed, engine RPMs, outsite air temperature, \etc), but may also consist of discrete parameters (\eg weather conditions, user/system commands, \etc). Recurrent Neural Networks (RNNs), especially with modern memory cell architectures -- such as LSTM (long short-term memory), GRU (gated recurrent unit), Delta-RNN and others -- are excellent at determining \h{long time}\dan{correct?} range dependencies and predicting future time series values. To more appropriately handle tactic volatility, we will extend these to not only predict future \hl{sensor}\dan{keep word?} parameters \emph{but also a confidence interval for those predictions} so the system can be better informed of the risk for using such a \hl{?tactic?} prediction.
+
+%In some circumstances knowing the amount of volatility will be more important than knowing a specific predicted value. The variance of data streams used to make tactical decisions will also be tracked so that it can be used to make better informed tactic-based decisions, as well as the historical prediction error rates providing a level of confidence for the predictions.
+
+
+\objective{II}{Validating Sensory Input Using Generative Models}{The framework will provide measures of certainty to a system's sensory input to account for damage or adversarial activity. This will be accomplished by having our evolved RNNs operate as generative models, where the entire set of inputs are predicted as the RNNs output. If one or more inputs are \hl{off}\dan{?inaccurate/imprecise/unreliable?}, we can utilize a predicted value in the place of this \hl{unreliable} input
+%we can utilize \hl{predicted} values for \hl{predictions}\dan{?anticipated tactic values?} 
+in the case of sensor damage, degradation or inaccuracies due to a new or uncontrolled environment.}
+
+%\vspace{2mm} \noindent \textbf{Objective II: Validating Sensory Input Using Generative Models }The framework will provide measures of certainty to a system's sensory input to account for damage or adversarial activity. This will be accomplished by having our evolved RNNs operate as generative models, where the entire set of inputs are predicted as the RNNs output. If one or more inputs are \hl{off}\dan{?inaccurate/imprecise/unreliable?}, we can utilize a predicted value in the place of this \hl{unreliable} input
+%we can utilize \hl{predicted} values for \hl{predictions}\dan{?anticipated tactic values?} 
+%in the case of sensor damage, degradation or inaccuracies due to a new or uncontrolled environment.
+
+
+
+
+\objective{III}{\hl{Speeding}\dan{dumb question, but is it `speeding'?} Transfer Learning Using Evolved RNNs}{To more rapidly adjust to new sensors and minimal amounts of data, we will utilize an evolutionary strategy to take RNNs pre-trained on similar data, and evolve them in parallel using new sensor data. This will quickly bootstrap the learning process to allow more accurate data leading to higher confidence predictions using new and limited data. The project team has shown significant success in efficiently evolving recurrent neural networks with multiple memory cell types for time series data prediction~\cite{desell-exalt-coal-2019,desell-gecco-examm-2019}.%\dan{Will need to modify this. Not only sensors}.
+
+Many autonomous systems operate in new, \hl{uncontrolled} environments, and the sensors available to an autonomous system may change over time due to damage or acquisition of new components. Through our novel online neuro-evolutionary process, we will adapt prior trained RNNs by \hl{dropping out/?removing?} inputs from unused/broken sensors and evolving new connections and neurons to account for new sensory inputs and/or different environments. These RNNs may even potentially originate from different systems which utilize a partially overlapping set of sensors. This will allow swift transfer of previous knowledge to the new set of sensors.}
+
+
+%%
+
+
+
+%\vspace{2mm} \noindent \textbf{Objective III: \hl{Speeding}\dan{dumb question, but is it `speeding'?} Transfer Learning Using Evolved RNNs }To more rapidly adjust to new sensors and minimal amounts of data, we will utilize an evolutionary strategy to take RNNs pre-trained on similar data, and evolve them in parallel using new sensor data. This will quickly bootstrap the learning process to allow more accurate data leading to higher confidence predictions using new and limited data. The project team has shown significant success in efficiently evolving recurrent neural networks with multiple memory cell types for time series data prediction~\cite{desell-exalt-coal-2019,desell-gecco-examm-2019}.%\dan{Will need to modify this. Not only sensors}.
+
+%Many autonomous systems operate in new, \hl{uncontrolled} environments, and the sensors available to an autonomous system may change over time due to damage or acquisition of new components. Through our novel online neuro-evolutionary process, we will adapt prior trained RNNs by \hl{dropping out/?removing?} inputs from unused/broken sensors and evolving new connections and neurons to account for new sensory inputs and/or different environments. These RNNs may even potentially originate from different systems which utilize a partially overlapping set of sensors. This will allow swift transfer of previous knowledge to the new set of sensors.
+
+
+\objective{IV}{Incorporate Multi-Armed Bandit Approach Into Decision-making Process}{
+A multi-armed bandit based approach will be incorporated into the system's decision-making process. %, which will enable the system to properly `explore' and `exploit' tactic option(s) when appropriate. 
+This will provide the system the ability to explore and further learn about tactic options in new and uncertain environments with no/little amounts of data while also accounting for tactic predictions with a high level of variance and/or low confidence. %We will incorporate the use of a multi-armed bandit approach into the self-adaptive decision-making process of the self-adaptive system.
+This will enable the system to combine the specific objectives/rules of the system with the predicted tactic values, confidence levels and variations from the RNN-based process.
+%\dan{clean up}
+
+}
+
+%\vspace{2mm} \noindent \textbf{Objective IV: Incorporate Multi-Armed Bandit Approach Into Decision-making Process }A multi-armed bandit based approach will be incorporated into the system's decision-making process. %, which will enable the system to properly `explore' and `exploit' tactic option(s) when appropriate. 
+%This will provide the system the ability to explore and further learn about tactic options in new and uncertain environments with no/little amounts of data while also accounting for tactic predictions with a high level of variance and/or low confidence. %We will incorporate the use of a multi-armed bandit approach into the self-adaptive decision-making process of the self-adaptive system.
+%This will enable the system to combine the specific objectives/rules of the system with the predicted tactic values, confidence levels and variations from the RNN-based process.
+%\dan{clean up}
+
+% Possibly gather data on alternative tactic options
+
+% In appropriate scenarios will enable the system to appropriately  `explore' and `exploit' tactic option(s)
+
+
+
+
+%account for tactic predictions with a high level of variance and/or low confidence, and in new and uncertain environments with no/little amounts of previous data. %To account for tactic predictions with a high level of variance and/or low confidence, and in new and uncertain environments with no/little amounts of previous data, we will incorporate the use of a multi-armed bandit approach into the self-adaptive decision-making process of the self-adaptive system.
+%This will enable the system to combine the specific objectives/rules of the system with the predicted tactic values, confidence levels and variations from the RNN-based process.\dan{clean up}
+
+
+% Account for tactic unknowns, variance, low confidence, new environments or where very little amounts of empirical/existing data exists
+
+
+
+\objective{V}{Component and System Evaluation}{A systematic evaluation will be conducted at both the component and system levels to evaluate the overall effectiveness of our framework in support of predicting tactic volatility in autonomous systems. This will be accomplished using existing evaluation tools such as SWIM~\cite{moreno2018swim} and DARTSIM~\cite{MorenoDART2019}. These evaluations will demonstrate the benefits of accounting for tactic volatility and the positive impact of TVA on a system's efficiency, resiliency and ability to complete system/mission critical operations.}
+
+
+
+%\vspace{2mm} \noindent \textbf{Objective V: Component and System Evaluation }A systematic evaluation will be conducted at both the component and system levels to evaluate the overall effectiveness of our framework in support of predicting tactic volatility in autonomous systems. This will be accomplished using existing evaluation tools such as SWIM~\cite{moreno2018swim} and DARTSIM~\cite{MorenoDART2019}. These evaluations will demonstrate the benefits of accounting for tactic volatility and the positive impact of TVA on a system's efficiency, resiliency and ability to complete system/mission critical operations.% using our created dataset.
+%\dan{What more evaluation details can we add in here?}
+
+
+
+
+
+
+
+
+
+
+%\vspace{2mm} \noindent \textbf{Objective X: Adaptive Control Loop Integration: }We will demonstrate TVA's ability to positively impact the decision-making process in autonomous systems by integrating it in to the popular MAPE-K~\cite{kephart2003vision} and Rainbow~\cite{garlan2004rainbow} self-adaptive control loops. Although we will integrate TVA into these specific adaptive control loops, the fundamental concepts of our proposed solution are generic enough to be integrated into a variety of additional adaptation processes.
+
+
+%\dan{add to this}\dan{Is this an objective or a task}
+
+%\vspace{2mm} \noindent \textbf{Objective X: Creation of Dataset Containing Tactic Volatility: }While there are several available datasets that have been widely used~\cite{SEAMS_Artifacts_URL, traffic_Archive_URL}, no existing significantly-sized dataset contains time series data with real-world tactic volatility. To address this limitation, we will create a dataset of time series data containing real world tactic volatility. This will be accomplished by collecting time series data from physical robotic devices such as UAVs and in simulated cloud-based systems using Raspberry Pis. The team has already created an initial, publicly available dataset that contains real-world tactic volatility data~\cite{VALET_TOOL_URL}.%\todo{more details can be described here to add confidence in this process.... What we are planning on doing} % DK: This might be ok, especially if we do not have much space.
+
+
+%\dan{update this to add more confidence in things. Also clean up}\dan{Is this an objective or a task}
+
+
+
+
+\vspace{2mm} \noindent \textbf{Project timeline: }We will focus on Objective I, II, III and IV in years 1-3 and Objective V in Year 3. Objective VI (evaluation) will be conducted throughout the duration of the project as components and learning models will require continual testing and evaluation.\dan{update - maybe remove this?} % It seems like objectives 1-4 will be done throughout. Therefore, it might make sense to remove them.

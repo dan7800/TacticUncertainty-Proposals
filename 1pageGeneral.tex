@@ -1,0 +1,183 @@
+\documentclass{article}
+%\documentclass[2pt,english]{article}
+
+\usepackage{cite}
+\usepackage{listings}
+%\usepackage{times}
+\usepackage{color}
+\usepackage{url}
+\urlstyle{same} % Used for formatting formatting url footnotes
+\usepackage{soul} % highlighting
+\usepackage{forloop} % Project timeline
+\usepackage{tabularx} % table text width
+\usepackage{xcolor,colortbl} %%% Color Table Header
+\usepackage{fancyhdr} % Header
+%\usepackage{framed}		% Allows drawing text boxes
+\usepackage{pgfgantt}
+\usepackage{enumitem} % Use for enumerating A, B, C etc...
+
+%Use a font size no smaller than 11 point and one inch margins.
+
+
+\newcommand{\ie}{\emph{i.e.,}\xspace}
+\newcommand{\eg}{\emph{e.g.,}\xspace}
+\newcommand{\etc}{etc.\xspace}
+\newcommand{\etal}{\emph{et~al.}\xspace} 
+\newcommand{\descStep}[2]{\noindent \textbf{#1: } #2}
+
+\newcommand{\Title}{Accounting for Tactic Volatility: Improving Autonomous System Decision-Making Using Evolving Recurrent Neural Networks}
+
+\title{\Title} 
+
+
+
+
+%\title{Reducing Tactic Latency Uncertainty in Self-Adaptive Systems}
+
+\author{
+	\textbf{TPOC:} Daniel E. Krutz \{dxkvse@rit.edu\}\\
+%	\textbf{Project Team: }Qi Yu, Travis Desell, Alex Orobia\\
+%	Assistant Professor\\ % Removed for space
+%	Rochester Institute of Technology\\
+%	Department of Software Engineering \& Center of Cybersecurity \\
+%	Mailing Address: 134 Lomb Memorial Drive \\
+%	Rochester, NY 14623-5608 \\
+%	Voice: 585-475-2896 \\
+%       dxkvse@rit.edu
+}
+ \date{} % Remove the date
+
+% Alter these values based on the actual length.
+% The paper should be ~3 pages
+%\usepackage[top=.3in, bottom=1in, left=1in, right=1in]{geometry} %% Changes the margins of the pages - This was breaking the header functions
+
+\usepackage[bottom=1in, left=1in, right=1in, top=.3in]{geometry} %% Use this to make the page wider
+
+\newcommand{\todo}[1]{\textcolor{cyan}{\textbf{[#1]}}}
+\newcommand{\dan}[1]{\textcolor{blue}{{\it [Dan: #1]}}}
+\newcommand{\qi}[1]{\textcolor{red}{{\it [Qi: #1]}}}
+\newcommand{\alex}[1]{\textcolor{green}{{\it [Alex: #1]}}}
+\newcommand{\travis}[1]{\textcolor{brown}{{\it [Travis: #1]}}}
+
+
+\pagestyle{fancy}
+\lhead{\Title} % Leave empty to keep sections from being shown
+\rhead{Daniel E. Krutz}
+
+\usepackage{lastpage}
+%\cfoot{\thepage\ of \pageref{LastPage}}
+
+
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+
+% Mention how it has already shown promise
+% Send this along with the ASE paper (mention how it is top-tier)
+\todo{Add in the part about MAB}
+
+The proposed work will enable autonomous systems to \textbf{better account for uncertainty and volatility} as well as \textbf{operate in real-world environments with limited data}.
+
+\emph{Tactics} are actions taken by an autonomous system to deal with environmental changes or to achieve objectives. Example tactics include reducing non-essential functionality of a UAV when battery levels are low or provisioning an additional virtual machine in a web farm when workload reaches a specific threshold. Tactics will frequently experience volatility in terms of latency, cost, dependability, and availability. Unfortunately, state-of-the-art decision-making processes do not account for uncertainty and variability in the attributes of the tactic. This inability to account for volatility can lead to inaccurate utility estimates and result in decisions leading to less than optimal outcomes. Therefore, a robust prediction mechanism is needed allow autonomous systems to anticipate and account for tactic volatility and reduce associated uncertainty. \ul{This pioneering research will develop a \textbf{\emph{Tactic Volatility Aware} (TVA)} solution that will enable autonomous systems to better account for volatility using limited quantities of historical data, especially when operating in previously-unseen, stochastic environments.} Our proposed TVA process will address these challenges currently faced by autonomous systems: 
+
+
+%A primary challenge for autonomous systems is how to remain effective, resilient and accomplish mission objectives in stochastic environments where little amounts of prior mission and environmental data is available. \ul{This pioneering research will develop a \emph{Tactic Volatility Aware} (TVA) solution that will enable autonomous systems to better account for volatility using limited quantities of historical data, especially when operating in previously-unseen, stochastic environments.}
+
+
+
+
+%Our \emph{Tactic Volatility Aware} (TVA) solution will enable autonomous systems to function more effectively and efficiently while accomplishing mission objectives, 
+
+
+
+
+
+
+%\emph{Tactics} are the actions performed by self-adaptive systems that enable them to adapt to changes in their environments. For a self-adaptive cloud-based system, one tactic may include activating additional computing resources when response time thresholds are surpassed. In real-world environments, tactics will frequently experience \textit{tactic volatility}. Unfortunately, current self-adaptive approaches do not account for tactic volatility in their decision-making processes, and merely assume that tactics have static attributes. This limitation creates uncertainty in the decision-making process and may adversely impact the system's ability to perform the most optimal action.
+
+
+%Autonomous systems frequently use adaptation \emph{tactics} to make necessary changes. Example tactics include the provisioning of an additional virtual machine in a web farm when the workload reaches a specific threshold, or reducing non-essential functionality on an autonomous Unmanned Ariel Vehicle (UAV) when battery levels are low.
+
+%To enable automous systems to 
+
+%To address these \hl{challenges}, we will develop a \emph{Tactic Volatility Aware} (TVA) solution. The proposed TVA framework will address the following crucial challenges:
+
+
+
+%that will enable autonomous systems to better account for volatility, especially when operating in new and stochastic environments with limited amounts of historical data.
+
+% Challenges addressed
+
+
+
+\begin{enumerate}[noitemsep]
+
+  \item The proposed process must enable the autonomous system to effectively account for uncertainty and variability in its operating environment. 
+
+  \item Autonomous systems frequently operate in new, stochastic environments. Therefore, the proposed framework will enable the system to make accurate predictions with minimal amounts of historical or prior mission data. Using Dynamic Transfer Learning with Evolved RNNs, TVA will predict not only values but also provide a measure of certainty. %In some circumstances, knowing the amount of volatility will be more important than having a specific, predicted value.
+
+  \item In the event that prior mission data is available, the system should be able to quickly and effectively utilize this information to improve its future predictive ability.
+
+    %   \item Systems must proactively ensure adherence to \emph{Service Level Agreement} (SLA) specifications.
+
+% \item Systems must proactively ensure it adheres to \emph{Service Level Agreement} (SLA) specifications.
+
+  \item Systems should proactively adhere to \emph{Service Level Agreement} (SLA) specifications.
+
+  \item To support its inclusion into a wide range of existing systems, the proposed framework should easily integrate into existing autonomous decision-making processes and strategies.% such as including MAPE-K~\cite{kephart2003vision} and Rainbow~\cite{garlan2004rainbow}.
+
+\end{enumerate}
+
+
+
+
+% Briefly mention what we propose
+Through the adoption of Recurrent Neural Networks (RNNs), our TVA solution will offer several primary benefits in compared with existing processes:
+
+
+
+% Mention what tactics are
+
+
+\begin{enumerate}[noitemsep]
+
+    \item \descStep{Enable system to account for volatile tactic volatility}{In stochastic environments, the attributes of a tactic may be highly volatile. For example, the time required to complete the execution of a tactic may vary, or its cost (\eg ~energy or monetary) may be volatile. TVA will enable the system to better account for this volatility and incorporate this into the system's decision-making process.} % DK: Describe what tactics are here?
+    
+    
+    
+    %   Will enable the system to account for tactic volatility. More efficient, resilient and accomplish defined goals and objectives.
+    
+    % For example, the time required to complete the execution of a tactic may vary, or its cost may be volatile. This variation could arise from numerous, domain specific causes, \eg a tactic of transmitting data could take longer than expected due to network congestion, or a tactic of moving a physical component in a UAV could be more expensive in terms of energy due to component failure.
+    
+
+	\item \descStep{Support system learning in environments with little or no amount of historical data}{Many autonomous systems will operate in new environments, or ones with small amounts of historical information. To address this challenge, our TVA process will utilize Recurrent Neural Networks and Dynamic Transfer Learning Using Evolved RNNs, enabling the system to make accurate tactic predictions with minimal amounts of historical or prior mission data. The framework will predict not only values but also provide a measure of certainty. In some circumstances, knowing the amount of volatility will be more important than having a specific, predicted value.}  
+	% Will not require signfcant amounts of data, due to the use of
+	
+   \item \descStep{Reactive Specifications Monitoring}{Our TVA process will enable the system to act more proactively in ensuring that specifications defined in the SLA are adhered to. This will be accomplished by predicting future values of SLA defined specifications. This will enable the system to act proactively to ensure that SLA specifications are adhered to.}  
+
+
+% This will be accomplished by predicting future values of SLA defined specifications. This will enable the system to act proactively to ensure that SLA specifications are adhered to.
+    
+    % This will be accomplished by predicting future SLA-related attributes using RNNs.
+    
+%    A process that enables the system to better anticipate how it will perform in accordance with an SLA would help the system to operate optimally in dynamic environments. This might entail integrating mechanisms for longterm planning and sampling of future, possible trajectories conditioned on a particular SLA.
+    
+    
+    
+%\item \descStep{XXXX}{XXXXX}
+	
+	
+\end{enumerate}
+
+
+
+% The benefits of the system
+
+
+
+
+\end{document}
+
